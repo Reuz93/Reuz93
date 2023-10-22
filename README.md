@@ -1,4 +1,5 @@
-### Hi there 👋
+Hello, World! 🌍
+I'm [Your Name], a passionate [Your Profession, e.g., "Software Developer"] from [Your Location, e.g., "New York City"]. I've spent years working as a System Architect, diving into the financial/payments and banking world. I'm revisiting my coding roots now integrating Python into my professional toolset.
 ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-239120?style=for-the-badge&logo=javascript&logoColor=white)
