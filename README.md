@@ -6,6 +6,7 @@ I've spent years working as a System Architect, diving into the financial/paymen
 
 Got any cool projects or just want to chat about finance and tech? Hit me up!
 
+![Skills Chart](./stats.svg)
 
 <!--
 **Reuz93/Reuz93** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
