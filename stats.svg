@@ -36,7 +36,7 @@
     font-weight="bold"
     text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
   >
-    CHARISMA
+    DESK DEFENDER
   </text>
   <text
     x="20"
@@ -47,7 +47,7 @@
     font-weight="bold"
     text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
   >
-    DESK DEFENDER
+    CHARISMA
   </text>
   <text
     x="20"
@@ -186,7 +186,7 @@
     filter="url(#drop-shadow)"
   />
 
-  <!-- DESK DEFENDER -->
+  <!-- CHARISMA -->
   <rect
     x="160"
     y="100"
@@ -248,7 +248,7 @@
     filter="url(#drop-shadow)"
   />
 
-  <!-- CHARISMA -->
+  <!-- DESK DEFENDER -->
   <rect
     x="160"
     y="140"
