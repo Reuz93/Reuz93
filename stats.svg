@@ -1,14 +1,27 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background Circle -->
-    <circle cx="100" cy="100" r="95" fill="#E9E9E9" stroke="#000" stroke-width="2"/>
-    
-    <!-- Skill Bars (Representing Stats) -->
-    <rect x="20" y="50" width="30" height="80" fill="#4CAF50"/> <!-- Python Skill -->
-    <rect x="70" y="70" width="30" height="60" fill="#FFC107"/> <!-- JavaScript Skill -->
-    <rect x="120" y="40" width="30" height="90" fill="#2196F3"/> <!-- System Architecture Skill -->
-    
-    <!-- Skill Labels -->
-    <text x="20" y="145" font-family="Arial" font-size="12" fill="#000">Python</text>
-    <text x="70" y="135" font-family="Arial" font-size="12" fill="#000">JavaScript</text>
-    <text x="120" y="135" font-family="Arial" font-size="12" fill="#000">System Arch.</text>
+<svg width="300" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+
+    <!-- Attributes -->
+    <text x="20" y="40" font-family="Arial" font-size="20" fill="#FFF">STRENGTH</text>
+    <text x="20" y="80" font-family="Arial" font-size="20" fill="#FFF">INTELLIGENCE</text>
+    <text x="20" y="120" font-family="Arial" font-size="20" fill="#FFF">CHARISMA</text>
+    <text x="20" y="160" font-family="Arial" font-size="20" fill="#FFF">LUCK</text>
+    <text x="20" y="200" font-family="Arial" font-size="20" fill="#FFF">CONSTITUTION</text>
+    <text x="20" y="240" font-family="Arial" font-size="20" fill="#FFF">WILLPOWER</text>
+    <text x="20" y="280" font-family="Arial" font-size="20" fill="#FFF">AGILITY</text>
+
+    <!-- Bars for each attribute (Example: 4/10 for STRENGTH) -->
+    <rect x="160" y="30" width="20" height="20" fill="#32CD32"/>
+    <rect x="185" y="30" width="20" height="20" fill="#32CD32"/>
+    <rect x="210" y="30" width="20" height="20" fill="#32CD32"/>
+    <rect x="235" y="30" width="20" height="20" fill="#32CD32"/>
+    <rect x="260" y="30" width="20" height="20" fill="white"/>
+    <rect x="285" y="30" width="20" height="20" fill="white"/>
+    <rect x="310" y="30" width="20" height="20" fill="white"/>
+    <rect x="335" y="30" width="20" height="20" fill="white"/>
+    <rect x="360" y="30" width="20" height="20" fill="white"/>
+    <rect x="385" y="30" width="20" height="20" fill="white"/>
+
+    <!-- ... Add rectangles for other attributes similarly ... -->
+
 </svg>
