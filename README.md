@@ -6,4 +6,4 @@ I've spent years working as a System Architect, diving into the financial/paymen
 
 Got any cool projects or just want to chat about finance and tech? Hit me up!
 
-![Skills Chart](./stats.svg)
+![Skills Chart](.stats.svg)
