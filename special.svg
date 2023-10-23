@@ -1,0 +1,18 @@
+<svg width="250" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#6A0572"/>
+
+    <!-- Skills with Icons (Example for ADAPTABILITY) -->
+    <image x="10" y="10" width="20" height="20" xlink:href="path_to_adaptability_icon.png"/>
+    <text x="40" y="27" font-family="Arial" font-size="14" fill="#FFF">ADAPTABILITY: Quick learner</text>
+
+    <!-- ... Add similar sections for other special skills ... -->
+
+    <!-- Attribute Bars -->
+    <text x="10" y="70" font-family="Arial" font-size="14" fill="#FFF">LUCK</text>
+    <rect x="140" y="55" width="15" height="15" fill="#32CD32"/>
+    <rect x="160" y="55" width="15" height="15" fill="#32CD32"/>
+    <!-- ... Add rectangles for other attributes similarly ... -->
+
+</svg>
