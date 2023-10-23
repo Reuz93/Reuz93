@@ -6,4 +6,11 @@ I've spent years working as a System Architect, diving into the financial/paymen
 
 Got any cool projects or just want to chat about finance and tech? Hit me up!
 
-![Skills Chart](./stats.svg)
+<div style="display: flex; align-items: center;">
+    <!-- stats.svg -->
+    <img src="./stats.svg" alt="Skills Chart" style="max-width: 50%; width: 300px;">
+    <!-- special.svg -->
+    <img src="./special.svg" alt="Special Traits" style="max-width: 50%; width: 400px;">
+</div>
+
+
