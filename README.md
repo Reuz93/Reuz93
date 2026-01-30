@@ -6,7 +6,7 @@
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
-# 🎮 ROBERT "REUZ93" GARCÍA
+# 🎮 ROB ECHEAGARAY
 ### 『 System Architect 』•『 Mechatronics Engineer 』•『 Code Warrior 』
 
 <img src="https://img.shields.io/badge/Level-∞-blueviolet?style=for-the-badge&logo=trendmicro&logoColor=white"/> <img src="https://img.shields.io/badge/Class-Architect%20%2F%20Engineer-gold?style=for-the-badge&logo=openproject&logoColor=white"/> <img src="https://img.shields.io/badge/Region-MTY--MX-success?style=for-the-badge&logo=googlemaps&logoColor=white"/> <img src="https://img.shields.io/badge/Status-CODING-critical?style=for-the-badge&logo=statuspage&logoColor=white"/>
@@ -44,10 +44,10 @@
 
 ### 🔥 MAIN QUEST
 ```diff
-+ [ONGOING] Master the Python Arts
-! Difficulty: ⭐⭐⭐⭐
-@ Reward: +5000 XP, New Skill Tree
-# Progress: 60%
++ [ONGOING] Mastering AI
+! Difficulty: ⭐⭐⭐⭐⭐
+@ Reward: +10000 XP, AI Mastery Badge
+# Progress: 75%
 ```
 
 </td>
@@ -55,11 +55,9 @@
 
 ### ⚡ SIDE QUESTS
 ```yaml
-☑️ Conquered Financial Systems
-☑️ Mastered Payment Gateways
-☑️ Engineered Banking Solutions
-🔄 Building AI-Powered Apps
-🔄 Exploring Web3 & Blockchain
+🔄 Vibe Coding Sessions
+🔄 Kotlin Development
+🔄 POS System Development
 ```
 
 </td>
@@ -68,57 +66,20 @@
 
 ---
 
-## 🗡️ SKILL TREE
-
-```mermaid
-graph TD
-    A[🎓 Mechatronics Engineer] --> B[⚙️ System Design]
-    A --> C[🔌 Hardware Integration]
-    B --> D[🏗️ System Architect]
-    D --> E[💰 FinTech Systems]
-    D --> F[🏦 Banking Solutions]
-    D --> G[💳 Payment Processing]
-    E --> H[🐍 Python Integration]
-    F --> H
-    G --> H
-    H --> I[🤖 AI/ML Projects]
-    H --> J[🌐 Full-Stack Web Apps]
-    I --> K[🚀 RefAIn - AI Style Transfer]
-    J --> K
-    C --> L[🛠️ DevOps & Infrastructure]
-    L --> M[☁️ Cloud Architecture]
-```
-
----
-
 ## 🎒 INVENTORY & EQUIPMENT
 
 <div align="center">
 
-### ⚔️ WEAPONS (Languages)
+### ⚔️ WEAPONS (Core Stack)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### 🛡️ ARMOR (Frameworks)
 ![Rails](https://img.shields.io/badge/Rails-CC0000?style=for-the-badge&logo=rubyonrails&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-
-### 💎 ARTIFACTS (Tools & Tech)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)
 
-### 🔮 SPECIAL ITEMS (AI & APIs)
+### 🔮 SPECIAL ITEMS (AI & Tools)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-8B5CF6?style=for-the-badge&logo=anthropic&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 
 </div>
 
@@ -144,7 +105,7 @@ graph TD
 ### 👔 TachisBoutique
 **Live Booking System**
 `Difficulty: ⭐⭐⭐⭐`
-**Status:** ✅ DEFEATED
+**Status:** 🔄 PENDING
 
 *E-commerce • Real-time*
 *Reservation Platform*
@@ -155,7 +116,7 @@ graph TD
 ### 🔨 Auction Dev
 **Ruby Project**
 `Difficulty: ⭐⭐⭐`
-**Status:** ✅ DEFEATED
+**Status:** 🔄 PENDING
 
 *Bidding System*
 *Real-time Auctions*
