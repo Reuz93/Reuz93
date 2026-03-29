@@ -11,14 +11,10 @@ const data = JSON.parse(
 const weeks = data.data.user.contributionsCollection.contributionCalendar.weeks;
 const total = data.data.user.contributionsCollection.contributionCalendar.totalContributions;
 
-// Filter to last ~6 months (26 weeks)
-const sixMonthsAgo = new Date("2025-09-28");
-const filteredWeeks = weeks.filter(w => {
-  const d = new Date(w.contributionDays[0].date);
-  return d >= sixMonthsAgo;
-});
+// All weeks (last year from GitHub API)
+const filteredWeeks = weeks;
 
-const cellSize = 16;
+const cellSize = 13;
 const cellGap = 3;
 const offsetX = 55;
 const offsetY = 70;
@@ -79,7 +75,7 @@ let filteredTotal = 0;
 filteredWeeks.forEach(w => w.contributionDays.forEach(d => { filteredTotal += d.contributionCount; }));
 
 const gridWidth = offsetX + filteredWeeks.length * (cellSize + cellGap) + 30;
-const W = Math.max(560, gridWidth);
+const W = Math.max(880, gridWidth);
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 230" width="100%">
   <defs>
@@ -143,7 +139,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 230" widt
 
   <g class="screen">
     <text x="30" y="30" font-size="13" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3">WASTELAND LOG</text>
-    <text x="${W - 30}" y="30" text-anchor="end" font-size="11" fill="#00ff41" filter="url(#glow-cell)" letter-spacing="1" opacity="0.7">${filteredTotal} COMMITS</text>
+    <text x="${W - 30}" y="30" text-anchor="end" font-size="11" fill="#00ff41" filter="url(#glow-cell)" letter-spacing="1" opacity="0.7">${total} COMMITS</text>
 
     <text x="${W - 280}" y="48" font-size="8" fill="#00ff41" opacity="0.3">LESS</text>
     <rect x="${W - 250}" y="40" width="10" height="10" rx="2" fill="#0a1a0a" stroke="#00ff41" stroke-width="0.3" stroke-opacity="0.2"/>
@@ -170,7 +166,7 @@ ${cells}
       <path d="M4.5,11 Q5.5,13 7.5,11 Q9.5,13 10.5,11" fill="none" stroke="#00ff41" stroke-width="0.6" opacity="0.2"/>
     </g>
 
-    <text x="${W / 2}" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">LAST 6 MONTHS  //  REUZ</text>
+    <text x="${W / 2}" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">LAST YEAR  //  REUZ</text>
 
     <!-- Vignette + Scanlines -->
     <rect x="8" y="8" width="${W - 16}" height="214" rx="8" fill="url(#vignette)"/>
