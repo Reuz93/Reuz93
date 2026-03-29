@@ -1,120 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160">
   <defs>
-    <filter id="glow">
+    <filter id="phosphor">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="phosphor-strong">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="glow-sm">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="crt-warp">
+      <feGaussianBlur stdDeviation="0.3"/>
     </filter>
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff6600"/>
-      <stop offset="50%" style="stop-color:#ffcc00"/>
-      <stop offset="100%" style="stop-color:#72f862"/>
-    </linearGradient>
-    <linearGradient id="gengar-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#7b68ae"/>
-      <stop offset="100%" style="stop-color:#59468b"/>
-    </linearGradient>
-    <filter id="gengar-shadow">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="4">
-      <rect width="800" height="2" fill="transparent"/>
-      <rect y="2" width="800" height="2" fill="rgba(0,0,0,0.1)"/>
+    <radialGradient id="screen-vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0a1a0a; stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#000000; stop-opacity:0.6"/>
+    </radialGradient>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="3">
+      <rect width="800" height="1.5" fill="transparent"/>
+      <rect y="1.5" width="800" height="1.5" fill="rgba(0,0,0,0.15)"/>
     </pattern>
   </defs>
 
   <style>
     text { font-family: 'Courier New', 'Consolas', monospace; }
     @keyframes flicker {
+      0%, 100% { opacity: 0.97; }
+      50% { opacity: 1; }
+      92% { opacity: 0.98; }
+      93% { opacity: 0.90; }
+      94% { opacity: 0.98; }
+    }
+    @keyframes cursor-blink {
       0%, 100% { opacity: 1; }
-      92% { opacity: 1; }
-      93% { opacity: 0.85; }
-      94% { opacity: 1; }
-      96% { opacity: 0.92; }
-      97% { opacity: 1; }
+      50% { opacity: 0; }
     }
-    @keyframes marquee {
+    @keyframes scroll-ticker {
       0% { transform: translateX(820px); }
-      100% { transform: translateX(-1000px); }
+      100% { transform: translateX(-1100px); }
     }
-    @keyframes gengar-breathe {
-      0%, 100% { transform: translate(680px, 18px) scale(1); opacity: 0.15; }
-      50% { transform: translate(680px, 15px) scale(1.03); opacity: 0.25; }
+    @keyframes scanbar {
+      0% { transform: translateY(-10px); }
+      100% { transform: translateY(170px); }
     }
-    @keyframes gengar-eyes {
-      0%, 90%, 100% { opacity: 0.5; }
-      93% { opacity: 0.1; }
-      96% { opacity: 0.5; }
-    }
-    @keyframes gengar-grin {
-      0%, 85%, 100% { opacity: 0.4; }
-      90% { opacity: 0.7; }
-    }
-    .screen { animation: flicker 8s infinite; }
-    .scroll { animation: marquee 22s linear infinite; }
-    .gengar-body { animation: gengar-breathe 6s ease-in-out infinite; }
-    .gengar-eyes { animation: gengar-eyes 5s ease-in-out infinite; }
-    .gengar-grin { animation: gengar-grin 7s ease-in-out infinite; }
+    .screen { animation: flicker 4s infinite; }
+    .cursor { animation: cursor-blink 1s step-end infinite; }
+    .ticker { animation: scroll-ticker 25s linear infinite; }
+    .scanbar { animation: scanbar 8s linear infinite; opacity: 0.03; }
   </style>
 
-  <rect width="800" height="140" rx="8" fill="#0a0a1e"/>
-  <rect x="2" y="2" width="796" height="136" rx="7" fill="#050510" stroke="#2a2a4a" stroke-width="1"/>
+  <!-- Pip-Boy outer casing -->
+  <rect width="800" height="160" rx="12" fill="#1a1a0e"/>
+  <rect x="3" y="3" width="794" height="154" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
+  <!-- Screen bezel screws -->
+  <circle cx="14" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+  <circle cx="786" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+  <circle cx="14" cy="146" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+  <circle cx="786" cy="146" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+
+  <!-- CRT Screen -->
+  <rect x="8" y="8" width="784" height="144" rx="8" fill="#0a1a0a"/>
 
   <g class="screen">
-    <!-- Gengar lurking in the background -->
-    <g class="gengar-body">
-      <!-- Main body -->
-      <ellipse cx="50" cy="52" rx="42" ry="40" fill="url(#gengar-grad)" filter="url(#gengar-shadow)"/>
-      <!-- Head spikes -->
-      <path d="M18,30 L8,8 L28,22 Z" fill="#7b68ae"/>
-      <path d="M50,15 L50,-5 L62,18 Z" fill="#7b68ae"/>
-      <path d="M78,28 L92,10 L80,25 Z" fill="#7b68ae"/>
-      <!-- Eyes -->
-      <g class="gengar-eyes">
-        <ellipse cx="36" cy="42" rx="8" ry="6" fill="#ff2244"/>
-        <ellipse cx="64" cy="42" rx="8" ry="6" fill="#ff2244"/>
-        <ellipse cx="38" cy="41" rx="3" ry="3" fill="#1a1a2e"/>
-        <ellipse cx="66" cy="41" rx="3" ry="3" fill="#1a1a2e"/>
-      </g>
-      <!-- Grin -->
-      <g class="gengar-grin">
-        <path d="M28,58 Q38,72 50,62 Q62,72 72,58" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M34,60 L34,55" fill="none" stroke="#fff" stroke-width="1.5"/>
-        <path d="M44,63 L44,58" fill="none" stroke="#fff" stroke-width="1.5"/>
-        <path d="M56,63 L56,58" fill="none" stroke="#fff" stroke-width="1.5"/>
-        <path d="M66,60 L66,55" fill="none" stroke="#fff" stroke-width="1.5"/>
-      </g>
-    </g>
+    <!-- Pip-Boy tabs -->
+    <rect x="20" y="12" width="80" height="18" rx="3" fill="#00ff41" opacity="0.15"/>
+    <text x="60" y="25" text-anchor="middle" font-size="10" fill="#00ff41" filter="url(#phosphor)" letter-spacing="2" font-weight="bold">STAT</text>
 
-    <!-- Title -->
-    <text x="400" y="52" text-anchor="middle" font-size="42" font-weight="bold" fill="url(#title-grad)" filter="url(#glow)" letter-spacing="8">REUZ</text>
+    <rect x="110" y="12" width="80" height="18" rx="3" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
+    <text x="150" y="25" text-anchor="middle" font-size="10" fill="#00ff41" opacity="0.4" letter-spacing="2">INV</text>
 
-    <!-- Subtitle -->
-    <text x="400" y="78" text-anchor="middle" font-size="12" fill="#888899" filter="url(#glow-sm)" letter-spacing="4">SYSTEM ARCHITECT  //  FINTECH  //  AI</text>
+    <rect x="200" y="12" width="80" height="18" rx="3" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
+    <text x="240" y="25" text-anchor="middle" font-size="10" fill="#00ff41" opacity="0.4" letter-spacing="2">DATA</text>
 
-    <!-- Scrolling ticker -->
-    <g clip-path="url(#ticker-clip)">
-      <text y="112" font-size="10" fill="#2a2a4a" class="scroll" letter-spacing="2">
-        MONTERREY MX --- KOTLIN --- TYPESCRIPT --- PYTHON --- RUBY --- RAILS --- CLAUDE CODE --- VERIFONE POS --- ANDROID --- POSTGRESQL --- DISTRIBUTED AGENTS ---
+    <rect x="290" y="12" width="80" height="18" rx="3" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
+    <text x="330" y="25" text-anchor="middle" font-size="10" fill="#00ff41" opacity="0.4" letter-spacing="2">MAP</text>
+
+    <!-- Separator -->
+    <line x1="20" y1="35" x2="780" y2="35" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Main title -->
+    <text x="400" y="70" text-anchor="middle" font-size="40" font-weight="bold" fill="#00ff41" filter="url(#phosphor-strong)" letter-spacing="10">REUZ</text>
+
+    <!-- Subtitle line -->
+    <text x="400" y="92" text-anchor="middle" font-size="11" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3" opacity="0.7">SYSTEM ARCHITECT  /  FINTECH  /  AI BUILDER</text>
+
+    <!-- Location + version -->
+    <text x="30" y="108" font-size="9" fill="#00ff41" opacity="0.4" letter-spacing="1">LOC: MONTERREY, NL, MX</text>
+    <text x="780" y="108" text-anchor="end" font-size="9" fill="#00ff41" opacity="0.4" letter-spacing="1">PIP-OS v4.2.0</text>
+
+    <!-- Ticker -->
+    <line x1="20" y1="116" x2="780" y2="116" stroke="#00ff41" stroke-width="0.3" opacity="0.2"/>
+    <g clip-path="url(#t-clip)">
+      <text y="130" font-size="9" fill="#00ff41" opacity="0.25" class="ticker" letter-spacing="2">
+        KOTLIN // TYPESCRIPT // PYTHON // RUBY // RAILS // CLAUDE CODE // VERIFONE POS // ANDROID // POSTGRESQL // NODE.JS // DISTRIBUTED AGENTS // GEMINI //
       </text>
     </g>
-    <clipPath id="ticker-clip">
-      <rect x="10" y="96" width="780" height="25"/>
+    <clipPath id="t-clip">
+      <rect x="20" y="118" width="760" height="20"/>
     </clipPath>
 
-    <!-- Corner markers -->
-    <text x="15" y="18" font-size="8" fill="#222244" letter-spacing="1">v4.2</text>
-    <text x="755" y="18" font-size="8" fill="#222244" letter-spacing="1">MX-NL</text>
+    <!-- Cursor -->
+    <rect x="30" y="140" width="8" height="2" fill="#00ff41" opacity="0.5" class="cursor"/>
 
-    <!-- Bottom line -->
-    <line x1="15" y1="128" x2="785" y2="128" stroke="#1a1a2e" stroke-width="1"/>
-    <text x="400" y="136" text-anchor="middle" font-size="7" fill="#1a1a2e" letter-spacing="3">github.com/Reuz93</text>
+    <!-- Footer line -->
+    <text x="780" y="148" text-anchor="end" font-size="7" fill="#00ff41" opacity="0.2" letter-spacing="2">github.com/Reuz93</text>
 
+    <!-- Scan bar -->
+    <rect class="scanbar" x="8" y="0" width="784" height="3" fill="#00ff41"/>
+
+    <!-- Vignette -->
+    <rect x="8" y="8" width="784" height="144" rx="8" fill="url(#screen-vignette)"/>
     <!-- Scanlines -->
-    <rect x="2" y="2" width="796" height="136" rx="7" fill="url(#scanlines)" opacity="0.4"/>
+    <rect x="8" y="8" width="784" height="144" rx="8" fill="url(#scanlines)"/>
   </g>
 </svg>
