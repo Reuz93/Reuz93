@@ -11,7 +11,14 @@ const data = JSON.parse(
 const weeks = data.data.user.contributionsCollection.contributionCalendar.weeks;
 const total = data.data.user.contributionsCollection.contributionCalendar.totalContributions;
 
-const cellSize = 13;
+// Filter to last ~6 months (26 weeks)
+const sixMonthsAgo = new Date("2025-09-28");
+const filteredWeeks = weeks.filter(w => {
+  const d = new Date(w.contributionDays[0].date);
+  return d >= sixMonthsAgo;
+});
+
+const cellSize = 16;
 const cellGap = 3;
 const offsetX = 55;
 const offsetY = 70;
@@ -35,13 +42,13 @@ let monthLabels = "";
 let lastMonth = -1;
 const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 
-// Find ghost position - somewhere in the empty middle zone
-const ghostWeek = 18;
+// Find ghost position - Gengar hides in the grid
+const ghostWeek = Math.floor(filteredWeeks.length * 0.35);
 const ghostDay = 3;
-const ghostX = offsetX + ghostWeek * (cellSize + cellGap) + 1;
-const ghostY = offsetY + ghostDay * (cellSize + cellGap) - 3;
+const ghostX = offsetX + ghostWeek * (cellSize + cellGap) + 2;
+const ghostY = offsetY + ghostDay * (cellSize + cellGap) - 2;
 
-weeks.forEach((week, wi) => {
+filteredWeeks.forEach((week, wi) => {
   week.contributionDays.forEach((day, di) => {
     const x = offsetX + wi * (cellSize + cellGap);
     const y = offsetY + di * (cellSize + cellGap);
@@ -67,10 +74,14 @@ const dayNames = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
   dayLabels += `  <text x="28" y="${y}" font-size="8" fill="#00ff41" opacity="0.25" text-anchor="end" font-family="Courier New, monospace">${dayNames[i]}</text>\n`;
 });
 
-const gridWidth = offsetX + weeks.length * (cellSize + cellGap) + 30;
-const W = Math.max(880, gridWidth);
+// Count only filtered contributions
+let filteredTotal = 0;
+filteredWeeks.forEach(w => w.contributionDays.forEach(d => { filteredTotal += d.contributionCount; }));
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 215">
+const gridWidth = offsetX + filteredWeeks.length * (cellSize + cellGap) + 30;
+const W = Math.max(560, gridWidth);
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 230" width="100%">
   <defs>
     <filter id="glow-cell">
       <feGaussianBlur stdDeviation="1.2" result="blur"/>
@@ -123,16 +134,16 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 215">
 
   <!-- Casing -->
   <rect width="${W}" height="215" rx="12" fill="#1a1a0e"/>
-  <rect x="3" y="3" width="${W - 6}" height="209" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
+  <rect x="3" y="3" width="${W - 6}" height="224" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
   <circle cx="14" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
   <circle cx="${W - 14}" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
 
   <!-- Screen -->
-  <rect x="8" y="8" width="${W - 16}" height="199" rx="8" fill="#0a1a0a"/>
+  <rect x="8" y="8" width="${W - 16}" height="214" rx="8" fill="#0a1a0a"/>
 
   <g class="screen">
     <text x="30" y="30" font-size="13" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3">WASTELAND LOG</text>
-    <text x="${W - 30}" y="30" text-anchor="end" font-size="11" fill="#00ff41" filter="url(#glow-cell)" letter-spacing="1" opacity="0.7">${total} ENCOUNTERS</text>
+    <text x="${W - 30}" y="30" text-anchor="end" font-size="11" fill="#00ff41" filter="url(#glow-cell)" letter-spacing="1" opacity="0.7">${filteredTotal} COMMITS</text>
 
     <text x="${W - 280}" y="48" font-size="8" fill="#00ff41" opacity="0.3">LESS</text>
     <rect x="${W - 250}" y="40" width="10" height="10" rx="2" fill="#0a1a0a" stroke="#00ff41" stroke-width="0.3" stroke-opacity="0.2"/>
@@ -159,13 +170,13 @@ ${cells}
       <path d="M4.5,11 Q5.5,13 7.5,11 Q9.5,13 10.5,11" fill="none" stroke="#00ff41" stroke-width="0.6" opacity="0.2"/>
     </g>
 
-    <text x="${W / 2}" y="204" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">2025 .. 2026  //  REUZ</text>
+    <text x="${W / 2}" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">LAST 6 MONTHS  //  REUZ</text>
 
     <!-- Vignette + Scanlines -->
-    <rect x="8" y="8" width="${W - 16}" height="199" rx="8" fill="url(#vignette)"/>
-    <rect x="8" y="8" width="${W - 16}" height="199" rx="8" fill="url(#scan)"/>
+    <rect x="8" y="8" width="${W - 16}" height="214" rx="8" fill="url(#vignette)"/>
+    <rect x="8" y="8" width="${W - 16}" height="214" rx="8" fill="url(#scan)"/>
   </g>
 </svg>`;
 
 fs.writeFileSync("contributions.svg", svg);
-console.log(`Generated: ${weeks.length} weeks, ${total} contributions, ghost at (${ghostX},${ghostY})`);
+console.log(`Generated: ${filteredWeeks.length} weeks (6mo), ${filteredTotal}/${total} contributions, ghost at (${ghostX},${ghostY})`);
