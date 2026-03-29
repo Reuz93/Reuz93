@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-s">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="4">
+      <rect width="800" height="2" fill="transparent"/>
+      <rect y="2" width="800" height="2" fill="rgba(0,0,0,0.12)"/>
+    </pattern>
+  </defs>
+
+  <style>
+    text { font-family: 'Courier New', 'Consolas', monospace; }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      93% { opacity: 0.85; }
+      94% { opacity: 1; }
+    }
+    @keyframes pulse-green {
+      0%, 100% { fill: #72f862; }
+      50% { fill: #4a9e3a; }
+    }
+    @keyframes pulse-yellow {
+      0%, 100% { fill: #ffcc00; }
+      50% { fill: #aa8800; }
+    }
+    @keyframes pulse-red {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes static-noise {
+      0% { opacity: 0.4; }
+      25% { opacity: 0.2; }
+      50% { opacity: 0.35; }
+      75% { opacity: 0.15; }
+      100% { opacity: 0.4; }
+    }
+    .screen { animation: flicker 8s infinite; }
+    .active-dot { animation: pulse-green 1.5s ease-in-out infinite; }
+    .standby-dot { animation: pulse-yellow 2s ease-in-out infinite; }
+    .idle-dot { animation: pulse-red 3s ease-in-out infinite; }
+    .dead { opacity: 0.25; }
+    .dead-txt { animation: static-noise 2s linear infinite; }
+  </style>
+
+  <!-- Cabinet -->
+  <rect width="800" height="380" rx="8" fill="#0a0a1e"/>
+  <rect x="2" y="2" width="796" height="376" rx="7" fill="#050510" stroke="#2a2a4a" stroke-width="1"/>
+
+  <g class="screen">
+    <!-- Title -->
+    <text x="400" y="32" text-anchor="middle" font-size="16" fill="#ff6600" filter="url(#glow)" letter-spacing="4">MISSION CONTROL</text>
+    <line x1="30" y1="42" x2="770" y2="42" stroke="#333355" stroke-width="1" stroke-dasharray="6,3"/>
+
+    <!-- Legend -->
+    <circle cx="200" cy="58" r="4" class="active-dot"/>
+    <text x="210" y="62" font-size="9" fill="#72f862" letter-spacing="1">ACTIVE &lt;7d</text>
+    <circle cx="340" cy="58" r="4" class="standby-dot"/>
+    <text x="350" y="62" font-size="9" fill="#ffcc00" letter-spacing="1">STANDBY 7-30d</text>
+    <circle cx="500" cy="58" r="4" fill="#ff4444" class="idle-dot"/>
+    <text x="510" y="62" font-size="9" fill="#ff4444" letter-spacing="1">IDLE 30-90d</text>
+    <circle cx="630" cy="58" r="4" fill="#444455" class="dead"/>
+    <text x="640" y="62" font-size="9" fill="#444455" letter-spacing="1">ABANDONED 90d+</text>
+
+    <!-- ═══ ACTIVE ═══ -->
+    <text x="40" y="92" font-size="11" fill="#333355" letter-spacing="2">--- ACTIVE ---</text>
+
+    <!-- TachisBoutique-v2 -->
+    <circle cx="48" cy="112" r="4" class="active-dot"/>
+    <text x="60" y="116" font-size="12" fill="#72f862" filter="url(#glow-s)" font-weight="bold">TachisBoutique-v2</text>
+    <text x="280" y="116" font-size="10" fill="#555577">1d ago</text>
+
+    <!-- Polybloom -->
+    <circle cx="348" cy="112" r="4" class="active-dot"/>
+    <text x="360" y="116" font-size="12" fill="#72f862" filter="url(#glow-s)" font-weight="bold">Polybloom</text>
+    <text x="500" y="116" font-size="10" fill="#555577">1d ago</text>
+
+    <!-- InPOS -->
+    <circle cx="48" cy="137" r="4" class="active-dot"/>
+    <text x="60" y="141" font-size="12" fill="#72f862" filter="url(#glow-s)" font-weight="bold">InPOS</text>
+    <text x="280" y="141" font-size="10" fill="#555577">2d ago</text>
+
+    <!-- claude-core -->
+    <circle cx="348" cy="137" r="4" class="active-dot"/>
+    <text x="360" y="141" font-size="12" fill="#72f862" filter="url(#glow-s)" font-weight="bold">claude-core</text>
+    <text x="500" y="141" font-size="10" fill="#555577">today</text>
+
+    <!-- ═══ STANDBY ═══ -->
+    <text x="40" y="172" font-size="11" fill="#333355" letter-spacing="2">--- STANDBY ---</text>
+
+    <!-- PAS_HUB -->
+    <circle cx="48" cy="192" r="4" class="standby-dot"/>
+    <text x="60" y="196" font-size="12" fill="#ffcc00" filter="url(#glow-s)">PAS_HUB</text>
+    <text x="280" y="196" font-size="10" fill="#555577">15d ago</text>
+
+    <!-- claudio -->
+    <circle cx="348" cy="192" r="4" class="standby-dot"/>
+    <text x="360" y="196" font-size="12" fill="#ffcc00" filter="url(#glow-s)">claudio</text>
+    <text x="500" y="196" font-size="10" fill="#555577">22d ago</text>
+
+    <!-- RefAIn -->
+    <circle cx="48" cy="217" r="4" class="standby-dot"/>
+    <text x="60" y="221" font-size="12" fill="#ffcc00" filter="url(#glow-s)">RefAIn</text>
+    <text x="280" y="221" font-size="10" fill="#555577">25d ago</text>
+
+    <!-- ═══ IDLE ═══ -->
+    <text x="40" y="252" font-size="11" fill="#333355" letter-spacing="2">--- IDLE ---</text>
+
+    <!-- Sw4rm -->
+    <circle cx="48" cy="272" r="4" fill="#ff4444" class="idle-dot"/>
+    <text x="60" y="276" font-size="12" fill="#ff4444">Sw4rm</text>
+    <text x="280" y="276" font-size="10" fill="#555577">37d ago</text>
+
+    <!-- verifone-pos-clone -->
+    <circle cx="348" cy="272" r="4" fill="#ff4444" class="idle-dot"/>
+    <text x="360" y="276" font-size="12" fill="#ff4444">verifone-pos-clone</text>
+    <text x="560" y="276" font-size="10" fill="#555577">51d ago</text>
+
+    <!-- ═══ ABANDONED ═══ -->
+    <text x="40" y="307" font-size="11" fill="#222233" letter-spacing="2">--- ABANDONED ---</text>
+
+    <g class="dead-txt">
+      <circle cx="48" cy="327" r="4" fill="#333344" class="dead"/>
+      <text x="60" y="331" font-size="11" fill="#333344">TachisBoutique</text>
+      <text x="220" y="331" font-size="9" fill="#222233">157d</text>
+
+      <circle cx="288" cy="327" r="4" fill="#333344" class="dead"/>
+      <text x="300" y="331" font-size="11" fill="#333344">Auction_dev</text>
+      <text x="430" y="331" font-size="9" fill="#222233">175d</text>
+
+      <circle cx="498" cy="327" r="4" fill="#333344" class="dead"/>
+      <text x="510" y="331" font-size="11" fill="#333344">nextjs-boilerplate</text>
+      <text x="680" y="331" font-size="9" fill="#222233">497d</text>
+    </g>
+
+    <!-- Footer -->
+    <line x1="30" y1="348" x2="770" y2="348" stroke="#222233" stroke-width="1" stroke-dasharray="6,3"/>
+    <text x="400" y="368" text-anchor="middle" font-size="10" fill="#333355" letter-spacing="2">
+      4 ACTIVE  //  3 STANDBY  //  2 IDLE  //  3+ ABANDONED  //  LAST SCAN: 2026-03-28
+    </text>
+
+    <!-- Scanlines -->
+    <rect x="2" y="2" width="796" height="376" rx="7" fill="url(#scanlines)" opacity="0.4"/>
+  </g>
+</svg>

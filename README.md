@@ -1,73 +1,39 @@
-## Rob Echeagaray
+<div align="center">
 
-**System Architect** | **Mechatronics Engineer** | **AI Builder**
+<img src="./header.svg" alt="Rob Echeagaray" width="800">
 
-Building intelligent systems at the intersection of finance, hardware, and AI.
+<br/>
+<br/>
 
-`Monterrey, MX`
+<img src="./stats.svg" alt="Player Stats" width="560">
 
----
+<br/>
+<br/>
 
-### What I Do
+<img src="./projects.svg" alt="Mission Control" width="800">
 
-```python
-class Rob:
-    role = "System Architect"
-    background = "Mechatronics Engineering"
-    location = "Monterrey, MX"
+<br/>
+<br/>
 
-    stack = {
-        "languages": ["Kotlin", "TypeScript", "Python", "Ruby"],
-        "ai":        ["Claude Code", "Gemini", "OpenAI"],
-        "backend":   ["Rails", "Node.js", "PostgreSQL"],
-        "systems":   ["Android", "Verifone POS", "Linux"],
-    }
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Reuz93&theme=midnight-purple&hide_border=true&ring=72f862&fire=ff6600&currStreakLabel=72f862&sideLabels=888899&dates=555577&stroke=2a2a4a&background=050510)](https://github.com/Reuz93)
 
-    focus = [
-        "Payment systems & FinTech",
-        "AI agents & orchestration",
-        "Distributed device networks",
-    ]
+<br/>
+
+```
+ ╔══════════════════════════════════════════════════════════════╗
+ ║  > SYSTEM.CONNECT                                          ║
+ ║                                                            ║
+ ║    github.com/Reuz93            Monterrey, MX              ║
+ ║                                                            ║
+ ║  > STACK.DUMP                                              ║
+ ║                                                            ║
+ ║    Kotlin // TypeScript // Python // Ruby // Rails          ║
+ ║    Claude Code // Gemini // Verifone POS // Android         ║
+ ║    PostgreSQL // Node.js // Linux                           ║
+ ║                                                            ║
+ ╚══════════════════════════════════════════════════════════════╝
 ```
 
----
+![Profile Views](https://komarev.com/ghpvc/?username=Reuz93&color=72f862&style=flat-square&label=VISITORS)
 
-### Active Projects
-
-#### `Sw4rm` — Distributed Agent Swarm
-Interconnected device mesh for distributed AI agent execution.
-
-#### `ClaudIO` — Claude Code Orchestrator
-Local web platform for managing multiple Claude Code instances simultaneously.
-**TypeScript**
-
-#### `PAS_HUB` — Headless Payment API
-REST + SSE payment gateway for Verifone T650c over LAN.
-**Kotlin**
-
-#### `InPOS` — Point of Sale
-POS system built on Android/Kotlin.
-**Kotlin**
-
-#### `Polybloom`
-**Python**
-
-#### `TachisBoutique v2` — Live Retail Reservations
-Real-time clothing reservation and purchase platform.
-**Ruby**
-
-#### `RefAIn` — AI Style Transfer
-Rails 8 app with Gemini AI integration and Stripe payments.
-**Ruby on Rails**
-
----
-
-### Stats
-
-<div align="center">
-<img src="./stats.svg" alt="Stats" width="400">
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Reuz93&theme=dark&hide_border=true)](https://github.com/Reuz93)
-
-![Profile Views](https://komarev.com/ghpvc/?username=Reuz93&color=blue&style=flat-square)
 </div>

@@ -1,382 +1,204 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox=" 20 18 265 185">
-  <!-- Attributes -->
-  <text
-    x="20"
-    y="40"
-    font-family="Arial"
-    font-size="15"
-    fill="white"
-    font-weight="bold"
-    text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
-  >
-    ADAPTABILITY
-  </text>
-  <text
-    x="20"
-    y="80"
-    font-family="Arial"
-    font-size="15"
-    fill="white"
-    font-weight="bold"
-    text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
-  >
-    LUCK
-  </text>
-  <text
-    x="20"
-    y="160"
-    font-family="Arial"
-    font-size="15"
-    fill="white"
-    font-weight="bold"
-    text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
-  >
-    DESK DEFENDER
-  </text>
-  <text
-    x="20"
-    y="120"
-    font-family="Arial"
-    font-size="15"
-    fill="white"
-    font-weight="bold"
-    text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
-  >
-    CHARISMA
-  </text>
-  <text
-    x="20"
-    y="200"
-    font-family="Arial"
-    font-size="15"
-    fill="white"
-    font-weight="bold"
-    text-shadow="2px 2px 4px rgba(0,0,0,0.5)"
-  >
-    TECH NERD
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400">
+  <defs>
+    <!-- CRT scanline effect -->
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="560" height="4">
+      <rect width="560" height="2" fill="transparent"/>
+      <rect y="2" width="560" height="2" fill="rgba(0,0,0,0.15)"/>
+    </pattern>
+    <!-- Pixel glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 
-  <!-- Bars for each attribute (Example: 4/10 for STRENGTH) -->
-  <!-- ADAPTABILITY -->
-  <rect
-    x="160"
-    y="20"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="185"
-    y="20"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="210"
-    y="20"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="235"
-    y="20"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="260"
-    y="20"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
+  <style>
+    @font-face { font-family: 'pixel'; }
+    text { font-family: 'Courier New', 'Consolas', monospace; }
 
-  <!-- LUCK -->
-  <rect
-    x="160"
-    y="60"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="185"
-    y="60"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="210"
-    y="60"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="235"
-    y="60"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="260"
-    y="60"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="white"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      92% { opacity: 1; }
+      93% { opacity: 0.8; }
+      94% { opacity: 1; }
+      96% { opacity: 0.9; }
+      97% { opacity: 1; }
+    }
 
-  <!-- CHARISMA -->
-  <rect
-    x="160"
-    y="100"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="185"
-    y="100"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="210"
-    y="100"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="235"
-    y="100"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="260"
-    y="100"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
 
-  <!-- DESK DEFENDER -->
-  <rect
-    x="160"
-    y="140"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="185"
-    y="140"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="210"
-    y="140"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="white"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="235"
-    y="140"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="white"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="260"
-    y="140"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="white"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
+    @keyframes bar-fill-1 {
+      0% { width: 0; }
+      100% { width: 180px; }
+    }
+    @keyframes bar-fill-2 {
+      0% { width: 0; }
+      100% { width: 160px; }
+    }
+    @keyframes bar-fill-3 {
+      0% { width: 0; }
+      100% { width: 200px; }
+    }
+    @keyframes bar-fill-4 {
+      0% { width: 0; }
+      100% { width: 140px; }
+    }
+    @keyframes bar-fill-5 {
+      0% { width: 0; }
+      100% { width: 120px; }
+    }
+    @keyframes bar-fill-6 {
+      0% { width: 0; }
+      100% { width: 190px; }
+    }
 
-  <!-- TECH NERD -->
-  <rect
-    x="160"
-    y="180"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="185"
-    y="180"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="210"
-    y="180"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="235"
-    y="180"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
-  <rect
-    x="260"
-    y="180"
-    width="20"
-    height="20"
-    rx="5"
-    ry="5"
-    fill="#32CD32"
-    stroke="white"
-    stroke-width="2"
-    filter="url(#drop-shadow)"
-  />
+    @keyframes coin-spin {
+      0%, 100% { transform: scaleX(1); }
+      25% { transform: scaleX(0.3); }
+      50% { transform: scaleX(1); }
+      75% { transform: scaleX(0.3); }
+    }
 
-  <!-- Filter for Drop Shadows -->
-  <filter id="drop-shadow" height="130%">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-    <feOffset dx="2" dy="2" result="offsetblur" />
-    <feComponentTransfer>
-      <feFuncA type="linear" slope="0.2" />
-    </feComponentTransfer>
-    <feMerge>
-      <feMergeNode />
-      <feMergeNode in="SourceGraphic" />
-    </feMerge>
-  </filter>
+    @keyframes score-up {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .screen { animation: flicker 8s infinite; }
+    .cursor { animation: blink 1s step-end infinite; }
+    .coin { animation: coin-spin 2s ease-in-out infinite; transform-origin: center; }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+
+    .bar-1 { animation: bar-fill-1 1.5s ease-out forwards; }
+    .bar-2 { animation: bar-fill-2 1.5s ease-out 0.2s forwards; width: 0; }
+    .bar-3 { animation: bar-fill-3 1.5s ease-out 0.4s forwards; width: 0; }
+    .bar-4 { animation: bar-fill-4 1.5s ease-out 0.6s forwards; width: 0; }
+    .bar-5 { animation: bar-fill-5 1.5s ease-out 0.8s forwards; width: 0; }
+    .bar-6 { animation: bar-fill-6 1.5s ease-out 1.0s forwards; width: 0; }
+  </style>
+
+  <!-- CABINET BODY -->
+  <rect width="560" height="400" rx="12" ry="12" fill="#1a1a2e"/>
+  <rect x="4" y="4" width="552" height="392" rx="10" ry="10" fill="#0d0d1a" stroke="#333355" stroke-width="2"/>
+
+  <!-- SCREEN BEZEL -->
+  <rect x="15" y="12" width="530" height="376" rx="6" ry="6" fill="#111128"/>
+  <rect x="18" y="15" width="524" height="370" rx="4" ry="4" fill="#0a0a1e" stroke="#2a2a4a" stroke-width="1"/>
+
+  <!-- CRT SCREEN -->
+  <g class="screen">
+    <!-- Screen background with slight gradient -->
+    <rect x="20" y="17" width="520" height="366" rx="3" ry="3" fill="#050510"/>
+
+    <!-- HEADER -->
+    <text x="280" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="#ff6600" filter="url(#glow)" letter-spacing="4">
+      PLAYER SELECT
+    </text>
+    <text x="280" y="68" text-anchor="middle" font-size="11" fill="#ffaa00" filter="url(#glow)" letter-spacing="2">
+      - ROB ECHEAGARAY -
+    </text>
+
+    <!-- Separator -->
+    <line x1="40" y1="78" x2="520" y2="78" stroke="#333366" stroke-width="1" stroke-dasharray="4,4"/>
+
+    <!-- COIN indicator -->
+    <g transform="translate(480, 38)">
+      <rect class="coin" x="-6" y="-6" width="12" height="12" rx="6" fill="#ffcc00" filter="url(#glow)"/>
+      <text x="16" y="4" font-size="10" fill="#ffcc00" filter="url(#glow)">x99</text>
+    </g>
+
+    <!-- STATS BARS -->
+    <!-- FINTECH -->
+    <text x="40" y="108" font-size="12" fill="#72f862" filter="url(#glow)" letter-spacing="1">FINTECH</text>
+    <rect x="160" y="96" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="97" height="14" rx="1" fill="#72f862" filter="url(#glow)" class="bar-1"/>
+    <text x="390" y="108" font-size="11" fill="#72f862" filter="url(#glow)">||||||||.|</text>
+    <text x="490" y="108" font-size="11" fill="#ffcc00" filter="url(#glow)">90</text>
+
+    <!-- AI/ML -->
+    <text x="40" y="143" font-size="12" fill="#00ccff" filter="url(#glow)" letter-spacing="1">AI/AGENTS</text>
+    <rect x="160" y="131" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="132" height="14" rx="1" fill="#00ccff" filter="url(#glow)" class="bar-2"/>
+    <text x="390" y="143" font-size="11" fill="#00ccff" filter="url(#glow)">||||||||..</text>
+    <text x="490" y="143" font-size="11" fill="#ffcc00" filter="url(#glow)">80</text>
+
+    <!-- SYSTEMS -->
+    <text x="40" y="178" font-size="12" fill="#ff4444" filter="url(#glow)" letter-spacing="1">SYSTEMS</text>
+    <rect x="160" y="166" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="167" height="14" rx="1" fill="#ff4444" filter="url(#glow)" class="bar-3"/>
+    <text x="390" y="178" font-size="11" fill="#ff4444" filter="url(#glow)">||||||||||</text>
+    <text x="490" y="178" font-size="11" fill="#ffcc00" filter="url(#glow)">99</text>
+
+    <!-- BACKEND -->
+    <text x="40" y="213" font-size="12" fill="#ff66ff" filter="url(#glow)" letter-spacing="1">BACKEND</text>
+    <rect x="160" y="201" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="202" height="14" rx="1" fill="#ff66ff" filter="url(#glow)" class="bar-4"/>
+    <text x="390" y="213" font-size="11" fill="#ff66ff" filter="url(#glow)">|||||||...</text>
+    <text x="490" y="213" font-size="11" fill="#ffcc00" filter="url(#glow)">70</text>
+
+    <!-- HARDWARE -->
+    <text x="40" y="248" font-size="12" fill="#ffcc00" filter="url(#glow)" letter-spacing="1">HARDWARE</text>
+    <rect x="160" y="236" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="237" height="14" rx="1" fill="#ffcc00" filter="url(#glow)" class="bar-5"/>
+    <text x="390" y="248" font-size="11" fill="#ffcc00" filter="url(#glow)">||||||....</text>
+    <text x="490" y="248" font-size="11" fill="#ffcc00" filter="url(#glow)">60</text>
+
+    <!-- CHARISMA -->
+    <text x="40" y="283" font-size="12" fill="#ff8800" filter="url(#glow)" letter-spacing="1">CHARISMA</text>
+    <rect x="160" y="271" width="220" height="16" rx="2" fill="#111133" stroke="#2a2a4a" stroke-width="1"/>
+    <rect x="161" y="272" height="14" rx="1" fill="#ff8800" filter="url(#glow)" class="bar-6"/>
+    <text x="390" y="283" font-size="11" fill="#ff8800" filter="url(#glow)">|||||||||.</text>
+    <text x="490" y="283" font-size="11" fill="#ffcc00" filter="url(#glow)">95</text>
+
+    <!-- Separator -->
+    <line x1="40" y1="300" x2="520" y2="300" stroke="#333366" stroke-width="1" stroke-dasharray="4,4"/>
+
+    <!-- CLASS & LEVEL -->
+    <text x="40" y="322" font-size="11" fill="#888899" letter-spacing="1">CLASS</text>
+    <text x="110" y="322" font-size="11" fill="#72f862" filter="url(#glow)" letter-spacing="1">SYSTEM ARCHITECT</text>
+
+    <text x="340" y="322" font-size="11" fill="#888899" letter-spacing="1">LVL</text>
+    <text x="380" y="322" font-size="14" fill="#ffcc00" filter="url(#glow-strong)" font-weight="bold">42</text>
+
+    <text x="420" y="322" font-size="11" fill="#888899" letter-spacing="1">XP</text>
+    <text x="450" y="322" font-size="11" fill="#72f862" filter="url(#glow)">13,370</text>
+
+    <!-- EQUIPPED -->
+    <text x="40" y="347" font-size="11" fill="#888899" letter-spacing="1">EQUIPPED</text>
+    <text x="130" y="347" font-size="10" fill="#00ccff" filter="url(#glow)">Kotlin</text>
+    <text x="185" y="347" font-size="10" fill="#ff66ff" filter="url(#glow)">TypeScript</text>
+    <text x="265" y="347" font-size="10" fill="#ff4444" filter="url(#glow)">Python</text>
+    <text x="320" y="347" font-size="10" fill="#72f862" filter="url(#glow)">Ruby</text>
+    <text x="365" y="347" font-size="10" fill="#ffcc00" filter="url(#glow)">Rails</text>
+
+    <!-- FOOTER -->
+    <text x="280" y="373" text-anchor="middle" font-size="10" fill="#555577" class="pulse" letter-spacing="2">
+      INSERT COIN TO CONTINUE
+    </text>
+    <rect x="195" y="377" width="4" height="2" fill="#555577" class="cursor"/>
+
+    <!-- Scanlines overlay -->
+    <rect x="20" y="17" width="520" height="366" rx="3" ry="3" fill="url(#scanlines)" opacity="0.5"/>
+
+    <!-- CRT vignette corners -->
+    <rect x="20" y="17" width="520" height="366" rx="3" ry="3" fill="url(#scanlines)" opacity="0.3"/>
+  </g>
 </svg>
