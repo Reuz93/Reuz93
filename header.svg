@@ -1,77 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140">
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-sm">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#ff6600"/>
-      <stop offset="30%" style="stop-color:#ffcc00"/>
-      <stop offset="60%" style="stop-color:#72f862"/>
-      <stop offset="100%" style="stop-color:#00ccff"/>
+      <stop offset="50%" style="stop-color:#ffcc00"/>
+      <stop offset="100%" style="stop-color:#72f862"/>
     </linearGradient>
+    <linearGradient id="gengar-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7b68ae"/>
+      <stop offset="100%" style="stop-color:#59468b"/>
+    </linearGradient>
+    <filter id="gengar-shadow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="4">
+      <rect width="800" height="2" fill="transparent"/>
+      <rect y="2" width="800" height="2" fill="rgba(0,0,0,0.1)"/>
+    </pattern>
   </defs>
 
   <style>
     text { font-family: 'Courier New', 'Consolas', monospace; }
-
     @keyframes flicker {
       0%, 100% { opacity: 1; }
+      92% { opacity: 1; }
       93% { opacity: 0.85; }
       94% { opacity: 1; }
-      96% { opacity: 0.9; }
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      96% { opacity: 0.92; }
+      97% { opacity: 1; }
     }
     @keyframes marquee {
-      0% { transform: translateX(800px); }
-      100% { transform: translateX(-900px); }
+      0% { transform: translateX(820px); }
+      100% { transform: translateX(-1000px); }
     }
-    .screen { animation: flicker 6s infinite; }
-    .blink { animation: blink 1.2s step-end infinite; }
-    .scroll { animation: marquee 20s linear infinite; }
-
-    @keyframes scanmove {
-      0% { transform: translateY(-120px); }
-      100% { transform: translateY(120px); }
+    @keyframes gengar-breathe {
+      0%, 100% { transform: translate(680px, 18px) scale(1); opacity: 0.15; }
+      50% { transform: translate(680px, 15px) scale(1.03); opacity: 0.25; }
     }
-    .scanbar { animation: scanmove 4s linear infinite; opacity: 0.06; }
+    @keyframes gengar-eyes {
+      0%, 90%, 100% { opacity: 0.5; }
+      93% { opacity: 0.1; }
+      96% { opacity: 0.5; }
+    }
+    @keyframes gengar-grin {
+      0%, 85%, 100% { opacity: 0.4; }
+      90% { opacity: 0.7; }
+    }
+    .screen { animation: flicker 8s infinite; }
+    .scroll { animation: marquee 22s linear infinite; }
+    .gengar-body { animation: gengar-breathe 6s ease-in-out infinite; }
+    .gengar-eyes { animation: gengar-eyes 5s ease-in-out infinite; }
+    .gengar-grin { animation: gengar-grin 7s ease-in-out infinite; }
   </style>
 
-  <rect width="800" height="120" rx="8" fill="#0a0a1e"/>
-  <rect x="2" y="2" width="796" height="116" rx="7" fill="#050510" stroke="#2a2a4a" stroke-width="1"/>
+  <rect width="800" height="140" rx="8" fill="#0a0a1e"/>
+  <rect x="2" y="2" width="796" height="136" rx="7" fill="#050510" stroke="#2a2a4a" stroke-width="1"/>
 
   <g class="screen">
+    <!-- Gengar lurking in the background -->
+    <g class="gengar-body">
+      <!-- Main body -->
+      <ellipse cx="50" cy="52" rx="42" ry="40" fill="url(#gengar-grad)" filter="url(#gengar-shadow)"/>
+      <!-- Head spikes -->
+      <path d="M18,30 L8,8 L28,22 Z" fill="#7b68ae"/>
+      <path d="M50,15 L50,-5 L62,18 Z" fill="#7b68ae"/>
+      <path d="M78,28 L92,10 L80,25 Z" fill="#7b68ae"/>
+      <!-- Eyes -->
+      <g class="gengar-eyes">
+        <ellipse cx="36" cy="42" rx="8" ry="6" fill="#ff2244"/>
+        <ellipse cx="64" cy="42" rx="8" ry="6" fill="#ff2244"/>
+        <ellipse cx="38" cy="41" rx="3" ry="3" fill="#1a1a2e"/>
+        <ellipse cx="66" cy="41" rx="3" ry="3" fill="#1a1a2e"/>
+      </g>
+      <!-- Grin -->
+      <g class="gengar-grin">
+        <path d="M28,58 Q38,72 50,62 Q62,72 72,58" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M34,60 L34,55" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <path d="M44,63 L44,58" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <path d="M56,63 L56,58" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <path d="M66,60 L66,55" fill="none" stroke="#fff" stroke-width="1.5"/>
+      </g>
+    </g>
+
     <!-- Title -->
-    <text x="400" y="48" text-anchor="middle" font-size="36" font-weight="bold" fill="url(#title-grad)" filter="url(#glow)" letter-spacing="6">
-      ROB ECHEAGARAY
-    </text>
+    <text x="400" y="52" text-anchor="middle" font-size="42" font-weight="bold" fill="url(#title-grad)" filter="url(#glow)" letter-spacing="8">REUZ</text>
 
     <!-- Subtitle -->
-    <text x="400" y="72" text-anchor="middle" font-size="14" fill="#ff6600" filter="url(#glow)" letter-spacing="3">
-      SYSTEM ARCHITECT  //  MECHATRONICS  //  AI BUILDER
-    </text>
+    <text x="400" y="78" text-anchor="middle" font-size="12" fill="#888899" filter="url(#glow-sm)" letter-spacing="4">SYSTEM ARCHITECT  //  FINTECH  //  AI</text>
 
-    <!-- Scrolling text -->
+    <!-- Scrolling ticker -->
     <g clip-path="url(#ticker-clip)">
-      <text y="100" font-size="11" fill="#333355" class="scroll" letter-spacing="1">
-        MONTERREY MX --- FINTECH --- POS SYSTEMS --- AI AGENTS --- DISTRIBUTED COMPUTING --- CLAUDE CODE --- KOTLIN --- TYPESCRIPT --- RUBY ON RAILS ---
+      <text y="112" font-size="10" fill="#2a2a4a" class="scroll" letter-spacing="2">
+        MONTERREY MX --- KOTLIN --- TYPESCRIPT --- PYTHON --- RUBY --- RAILS --- CLAUDE CODE --- VERIFONE POS --- ANDROID --- POSTGRESQL --- DISTRIBUTED AGENTS ---
       </text>
     </g>
     <clipPath id="ticker-clip">
-      <rect x="10" y="85" width="780" height="25"/>
+      <rect x="10" y="96" width="780" height="25"/>
     </clipPath>
 
-    <!-- Corner decorations -->
-    <text x="15" y="18" font-size="9" fill="#333355">P1</text>
-    <text x="760" y="18" font-size="9" fill="#333355" class="blink">REC</text>
+    <!-- Corner markers -->
+    <text x="15" y="18" font-size="8" fill="#222244" letter-spacing="1">v4.2</text>
+    <text x="755" y="18" font-size="8" fill="#222244" letter-spacing="1">MX-NL</text>
 
-    <!-- Scan bar -->
-    <rect class="scanbar" x="0" y="0" width="800" height="8" fill="#ffffff"/>
+    <!-- Bottom line -->
+    <line x1="15" y1="128" x2="785" y2="128" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="400" y="136" text-anchor="middle" font-size="7" fill="#1a1a2e" letter-spacing="3">github.com/Reuz93</text>
+
+    <!-- Scanlines -->
+    <rect x="2" y="2" width="796" height="136" rx="7" fill="url(#scanlines)" opacity="0.4"/>
   </g>
 </svg>
