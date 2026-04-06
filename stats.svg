@@ -22,91 +22,140 @@
     @keyframes bar3 { 0% { width: 0; } 100% { width: 261px; } }
     @keyframes bar4 { 0% { width: 0; } 100% { width: 240px; } }
     @keyframes bar5 { 0% { width: 0; } 100% { width: 270px; } }
-    @keyframes nn-pulse1 { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-    @keyframes nn-pulse2 { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes nn-o1 { 0%, 100% { opacity: 0.55; } 50% { opacity: 1;   } }
+    @keyframes nn-o2 { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.9; } }
     .screen { animation: flicker 5s infinite; }
-    .b1 { animation: bar1 1.2s ease-out forwards; }
-    .b2 { animation: bar2 1.2s ease-out 0.15s forwards; width: 0; }
-    .b3 { animation: bar3 1.2s ease-out 0.30s forwards; width: 0; }
-    .b4 { animation: bar4 1.2s ease-out 0.45s forwards; width: 0; }
-    .b5 { animation: bar5 1.2s ease-out 0.60s forwards; width: 0; }
-    .nn-o1 { animation: nn-pulse1 2s ease-in-out infinite; }
-    .nn-o2 { animation: nn-pulse2 2s ease-in-out 1s infinite; }
+    .b1 { animation: bar1 1.2s ease-out          forwards; }
+    .b2 { animation: bar2 1.2s ease-out 0.15s    forwards; width: 0; }
+    .b3 { animation: bar3 1.2s ease-out 0.30s    forwards; width: 0; }
+    .b4 { animation: bar4 1.2s ease-out 0.45s    forwards; width: 0; }
+    .b5 { animation: bar5 1.2s ease-out 0.60s    forwards; width: 0; }
+    .out1 { animation: nn-o1 2.0s ease-in-out          infinite; }
+    .out2 { animation: nn-o2 2.0s ease-in-out 1s        infinite; }
   </style>
 
   <g class="screen">
 
-    <!-- Neural Network (top right) -->
-    <g transform="translate(484, 0)">
-      <line x1="5" y1="20" x2="29" y2="8"  stroke="#00ff41" stroke-width="0.5" opacity="0.12"/>
-      <line x1="5" y1="20" x2="29" y2="30" stroke="#00ff41" stroke-width="0.5" opacity="0.15"/>
-      <line x1="5" y1="20" x2="29" y2="52" stroke="#00ff41" stroke-width="0.5" opacity="0.07"/>
-      <line x1="5" y1="50" x2="29" y2="8"  stroke="#00ff41" stroke-width="0.5" opacity="0.07"/>
-      <line x1="5" y1="50" x2="29" y2="30" stroke="#00ff41" stroke-width="0.5" opacity="0.12"/>
-      <line x1="5" y1="50" x2="29" y2="52" stroke="#00ff41" stroke-width="0.5" opacity="0.15"/>
-      <line x1="33" y1="8"  x2="57" y2="20" stroke="#00ff41" stroke-width="0.5" opacity="0.20"/>
-      <line x1="33" y1="30" x2="57" y2="20" stroke="#00ff41" stroke-width="0.5" opacity="0.22"/>
-      <line x1="33" y1="52" x2="57" y2="20" stroke="#00ff41" stroke-width="0.5" opacity="0.11"/>
-      <line x1="33" y1="8"  x2="57" y2="50" stroke="#00ff41" stroke-width="0.5" opacity="0.11"/>
-      <line x1="33" y1="30" x2="57" y2="50" stroke="#00ff41" stroke-width="0.5" opacity="0.20"/>
-      <line x1="33" y1="52" x2="57" y2="50" stroke="#00ff41" stroke-width="0.5" opacity="0.22"/>
-      <circle cx="5"  cy="20" r="4" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.4"/>
-      <circle cx="5"  cy="50" r="4" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.4"/>
-      <circle cx="31" cy="8"  r="4" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.27"/>
-      <circle cx="31" cy="30" r="4" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.27"/>
-      <circle cx="31" cy="52" r="4" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.27"/>
-      <circle cx="57" cy="20" r="5" fill="none" stroke="#00ff41" stroke-width="1.5" filter="url(#phosphor)" class="nn-o1"/>
-      <circle cx="57" cy="50" r="5" fill="none" stroke="#00ff41" stroke-width="1.5" filter="url(#phosphor)" class="nn-o2"/>
-      <circle cx="57" cy="20" r="1.8" fill="#00ff41" opacity="0.85"/>
-      <circle cx="57" cy="50" r="1.8" fill="#00ff41" opacity="0.85"/>
-      <text x="31" y="68" text-anchor="middle" font-size="6" fill="#00ff41" opacity="0.18" letter-spacing="1">NEURAL</text>
+    <!--
+      Neural network synced with skills:
+      5 inputs (one per skill, opacity ∝ value, y aligned with bar centers)
+        AI 95       → y=26  opacity 0.85
+        FULL STACK98→ y=60  opacity 0.90  (brightest)
+        DEV 87      → y=94  opacity 0.72
+        FINTECH 80  → y=128 opacity 0.62
+        MECHATR. 90 → y=162 opacity 0.78
+      3 hidden   → y=45, 94, 143
+      2 outputs  → y=65, 120  (pulsing)
+    -->
+    <g transform="translate(482, 0)">
+
+      <!-- ── Input→Hidden connections ── -->
+      <!-- from AI(y=26) -->
+      <line x1="5" y1="26"  x2="27" y2="45"  stroke="#00ff41" stroke-width="0.4" opacity="0.14"/>
+      <line x1="5" y1="26"  x2="27" y2="94"  stroke="#00ff41" stroke-width="0.4" opacity="0.08"/>
+      <line x1="5" y1="26"  x2="27" y2="143" stroke="#00ff41" stroke-width="0.4" opacity="0.05"/>
+      <!-- from FULL STACK(y=60) -->
+      <line x1="5" y1="60"  x2="27" y2="45"  stroke="#00ff41" stroke-width="0.4" opacity="0.16"/>
+      <line x1="5" y1="60"  x2="27" y2="94"  stroke="#00ff41" stroke-width="0.4" opacity="0.12"/>
+      <line x1="5" y1="60"  x2="27" y2="143" stroke="#00ff41" stroke-width="0.4" opacity="0.06"/>
+      <!-- from DEV(y=94) -->
+      <line x1="5" y1="94"  x2="27" y2="45"  stroke="#00ff41" stroke-width="0.4" opacity="0.09"/>
+      <line x1="5" y1="94"  x2="27" y2="94"  stroke="#00ff41" stroke-width="0.4" opacity="0.15"/>
+      <line x1="5" y1="94"  x2="27" y2="143" stroke="#00ff41" stroke-width="0.4" opacity="0.09"/>
+      <!-- from FINTECH(y=128) -->
+      <line x1="5" y1="128" x2="27" y2="45"  stroke="#00ff41" stroke-width="0.4" opacity="0.05"/>
+      <line x1="5" y1="128" x2="27" y2="94"  stroke="#00ff41" stroke-width="0.4" opacity="0.10"/>
+      <line x1="5" y1="128" x2="27" y2="143" stroke="#00ff41" stroke-width="0.4" opacity="0.14"/>
+      <!-- from MECHATRONICS(y=162) -->
+      <line x1="5" y1="162" x2="27" y2="45"  stroke="#00ff41" stroke-width="0.4" opacity="0.04"/>
+      <line x1="5" y1="162" x2="27" y2="94"  stroke="#00ff41" stroke-width="0.4" opacity="0.08"/>
+      <line x1="5" y1="162" x2="27" y2="143" stroke="#00ff41" stroke-width="0.4" opacity="0.16"/>
+
+      <!-- ── Hidden→Output connections ── -->
+      <line x1="31" y1="45"  x2="55" y2="65"  stroke="#00ff41" stroke-width="0.5" opacity="0.22"/>
+      <line x1="31" y1="45"  x2="55" y2="120" stroke="#00ff41" stroke-width="0.5" opacity="0.10"/>
+      <line x1="31" y1="94"  x2="55" y2="65"  stroke="#00ff41" stroke-width="0.5" opacity="0.20"/>
+      <line x1="31" y1="94"  x2="55" y2="120" stroke="#00ff41" stroke-width="0.5" opacity="0.20"/>
+      <line x1="31" y1="143" x2="55" y2="65"  stroke="#00ff41" stroke-width="0.5" opacity="0.10"/>
+      <line x1="31" y1="143" x2="55" y2="120" stroke="#00ff41" stroke-width="0.5" opacity="0.22"/>
+
+      <!-- ── Input nodes (opacity ∝ skill value) ── -->
+      <!-- AI 95 -->
+      <circle cx="5" cy="26"  r="4.2" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.85"/>
+      <circle cx="5" cy="26"  r="1.5" fill="#00ff41" opacity="0.75"/>
+      <!-- FULL STACK 98 (brightest) -->
+      <circle cx="5" cy="60"  r="4.5" fill="none" stroke="#00ff41" stroke-width="1.2" opacity="0.90" filter="url(#phosphor)"/>
+      <circle cx="5" cy="60"  r="1.8" fill="#00ff41" opacity="0.85"/>
+      <!-- DEV 87 -->
+      <circle cx="5" cy="94"  r="3.8" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.72"/>
+      <circle cx="5" cy="94"  r="1.3" fill="#00ff41" opacity="0.60"/>
+      <!-- FINTECH 80 -->
+      <circle cx="5" cy="128" r="3.4" fill="none" stroke="#00ff41" stroke-width="0.9" opacity="0.62"/>
+      <circle cx="5" cy="128" r="1.1" fill="#00ff41" opacity="0.50"/>
+      <!-- MECHATRONICS 90 -->
+      <circle cx="5" cy="162" r="4.0" fill="none" stroke="#00ff41" stroke-width="1"   opacity="0.78"/>
+      <circle cx="5" cy="162" r="1.4" fill="#00ff41" opacity="0.65"/>
+
+      <!-- ── Hidden nodes ── -->
+      <circle cx="29" cy="45"  r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.30"/>
+      <circle cx="29" cy="94"  r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.30"/>
+      <circle cx="29" cy="143" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.30"/>
+
+      <!-- ── Output nodes (pulsing) ── -->
+      <circle cx="55" cy="65"  r="5" fill="none" stroke="#00ff41" stroke-width="1.5" filter="url(#phosphor)" class="out1"/>
+      <circle cx="55" cy="120" r="5" fill="none" stroke="#00ff41" stroke-width="1.5" filter="url(#phosphor)" class="out2"/>
+      <circle cx="55" cy="65"  r="1.8" fill="#00ff41" opacity="0.90"/>
+      <circle cx="55" cy="120" r="1.8" fill="#00ff41" opacity="0.90"/>
+
     </g>
 
-    <!-- Ghost guide lines (bar range) -->
+    <!-- ── Guide lines (bar range) ── -->
     <line x1="140" y1="16" x2="140" y2="174" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
     <line x1="440" y1="16" x2="440" y2="174" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
 
-    <!-- AI -->
-    <text x="30" y="30" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">AI</text>
+    <!-- ── Skill bars ── -->
+
+    <!-- AI  95 → input y=26, bar fill center y=26 -->
+    <text x="30"  y="30" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">AI</text>
     <rect x="141" y="20" height="12" rx="1" fill="#00ff41" opacity="0.65" filter="url(#phosphor)" class="b1"/>
     <text x="455" y="30" font-size="12" fill="#00ff41" filter="url(#phosphor)">95</text>
 
-    <!-- FULL STACK -->
-    <text x="30" y="64" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">FULL STACK</text>
+    <!-- FULL STACK  98 → input y=60 -->
+    <text x="30"  y="64" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">FULL STACK</text>
     <rect x="141" y="54" height="12" rx="1" fill="#00ff41" opacity="0.65" filter="url(#phosphor)" class="b2"/>
     <text x="455" y="64" font-size="12" fill="#00ff41" filter="url(#phosphor)">98</text>
 
-    <!-- DEV -->
-    <text x="30" y="98" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">DEV</text>
+    <!-- DEV  87 → input y=94 -->
+    <text x="30"  y="98" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">DEV</text>
     <rect x="141" y="88" height="12" rx="1" fill="#00ff41" opacity="0.65" filter="url(#phosphor)" class="b3"/>
     <text x="455" y="98" font-size="12" fill="#00ff41" filter="url(#phosphor)">87</text>
 
-    <!-- FINTECH -->
-    <text x="30" y="132" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">FINTECH</text>
+    <!-- FINTECH  80 → input y=128 -->
+    <text x="30"  y="132" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">FINTECH</text>
     <rect x="141" y="122" height="12" rx="1" fill="#00ff41" opacity="0.65" filter="url(#phosphor)" class="b4"/>
     <text x="455" y="132" font-size="12" fill="#00ff41" filter="url(#phosphor)">80</text>
 
-    <!-- MECHATRONICS -->
-    <text x="30" y="166" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">MECHATRONICS</text>
+    <!-- MECHATRONICS  90 → input y=162 -->
+    <text x="30"  y="166" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">MECHATRONICS</text>
     <rect x="141" y="156" height="12" rx="1" fill="#00ff41" opacity="0.65" filter="url(#phosphor)" class="b5"/>
     <text x="455" y="166" font-size="12" fill="#00ff41" filter="url(#phosphor)">90</text>
 
-    <!-- Divider -->
+    <!-- ── Divider ── -->
     <line x1="30" y1="181" x2="530" y2="181" stroke="#00ff41" stroke-width="0.3" opacity="0.2"/>
 
-    <!-- Focus -->
+    <!-- ── Focus ── -->
     <text x="30"  y="198" font-size="10" fill="#00ff41" opacity="0.35" letter-spacing="1">FOCUS</text>
     <text x="90"  y="198" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">LLM Orchestration</text>
     <text x="255" y="198" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Payment Systems</text>
     <text x="390" y="198" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">System Architecture</text>
 
-    <!-- Tools -->
+    <!-- ── Tools ── -->
     <text x="30"  y="216" font-size="10" fill="#00ff41" opacity="0.35" letter-spacing="1">TOOLS</text>
     <text x="90"  y="216" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">AI Agents</text>
     <text x="195" y="216" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">RAG Pipelines</text>
     <text x="315" y="216" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Distributed Systems</text>
 
-    <!-- Footer -->
+    <!-- ── Footer ── -->
     <line x1="30" y1="226" x2="530" y2="226" stroke="#00ff41" stroke-width="0.3" opacity="0.15"/>
     <text x="280" y="235" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">REUZ // 2026</text>
 
