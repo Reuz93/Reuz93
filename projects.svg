@@ -94,15 +94,6 @@
     </g>
     <line x1="30" y1="166" x2="530" y2="166" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
 
-    <!-- Row 4 · dotfiles · STABLE -->
-    <g class="r4">
-      <circle cx="44" cy="183" r="5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.22"/>
-      <text x="60"  y="188" font-size="13" fill="#00ff41" opacity="0.45" font-weight="bold">dotfiles</text>
-      <text x="210" y="188" font-size="9"  fill="#00ff41" opacity="0.22">Le Wagon · macOS · zsh</text>
-      <rect x="424" y="176" width="98" height="15" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.14"/>
-      <text x="473" y="188" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.22" letter-spacing="1">STABLE</text>
-    </g>
-
     <!-- ══════════════ CLASSIFIED ══════════════ -->
     <line x1="30" y1="204" x2="530" y2="204" stroke="#00ff41" stroke-width="0.4" opacity="0.18"/>
     <text x="30" y="215" font-size="7" fill="#00ff41" opacity="0.22" letter-spacing="2">CLASSIFIED  ─────────────────────────────────────────────</text>
