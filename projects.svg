@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 140" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" width="100%">
   <defs>
     <filter id="phosphor">
       <feGaussianBlur stdDeviation="1" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="ph-strong">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
@@ -25,66 +25,95 @@
       93% { opacity: 0.90; }
       94% { opacity: 0.97; }
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; }
+    @keyframes dot-active {
+      0%, 100% { opacity: 0.9; }
       50% { opacity: 1; }
     }
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.6; }
+    @keyframes dot-build {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 0.8; }
     }
-    @keyframes pulse-dim {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.35; }
+    @keyframes row-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
     .screen { animation: flicker 5s infinite; }
-    .p-active { animation: pulse 1.5s ease-in-out infinite; }
-    .p-standby { animation: pulse-slow 2.5s ease-in-out infinite; }
-    .p-idle { animation: pulse-dim 3s ease-in-out infinite; }
+    .da { animation: dot-active 1.2s ease-in-out infinite; }
+    .db { animation: dot-build  1.8s ease-in-out infinite; }
+    .r1 { animation: row-in 0.5s ease-out 0.1s both; }
+    .r2 { animation: row-in 0.5s ease-out 0.3s both; }
+    .r3 { animation: row-in 0.5s ease-out 0.5s both; }
+    .r4 { animation: row-in 0.5s ease-out 0.7s both; }
   </style>
 
-  <rect width="560" height="140" rx="12" fill="#1a1a0e"/>
-  <rect x="3" y="3" width="554" height="134" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
+  <!-- Outer frame -->
+  <rect width="560" height="220" rx="12" fill="#1a1a0e"/>
+  <rect x="3" y="3" width="554" height="214" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
+  <circle cx="14"  cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+  <circle cx="546" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
 
-  <rect x="8" y="8" width="544" height="124" rx="8" fill="#0a1a0a"/>
+  <!-- Screen bg -->
+  <rect x="8" y="8" width="544" height="204" rx="8" fill="#0a1a0a"/>
 
   <g class="screen">
-    <text x="280" y="30" text-anchor="middle" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3">REPOSITORIES</text>
-    <line x1="30" y1="40" x2="530" y2="40" stroke="#00ff41" stroke-width="0.3" opacity="0.2"/>
+    <!-- Header -->
+    <text x="30" y="34" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3">PROJECTS</text>
+    <text x="142" y="34" font-size="9" fill="#00ff41" opacity="0.28" letter-spacing="1">--verbose</text>
+    <line x1="30" y1="43" x2="530" y2="43" stroke="#00ff41" stroke-width="0.4" opacity="0.2"/>
 
-    <!-- Active -->
-    <circle cx="70" cy="68" r="6" fill="#00ff41" class="p-active" filter="url(#phosphor)"/>
-    <text x="70" y="72" text-anchor="middle" font-size="11" fill="#0a1a0a" font-weight="bold">4</text>
-    <text x="70" y="90" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.5" letter-spacing="1">ACTIVE</text>
-    <text x="70" y="102" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.25">&lt;7 days</text>
+    <!-- Column headers -->
+    <text x="65"  y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">NAME</text>
+    <text x="210" y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">STACK</text>
+    <text x="430" y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">STATUS</text>
 
-    <!-- Standby -->
-    <circle cx="190" cy="68" r="6" fill="#00ff41" class="p-standby" filter="url(#phosphor)"/>
-    <text x="190" y="72" text-anchor="middle" font-size="11" fill="#0a1a0a" font-weight="bold">3</text>
-    <text x="190" y="90" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.4" letter-spacing="1">STANDBY</text>
-    <text x="190" y="102" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.2">7-30 days</text>
+    <!-- ── Row 1: InPOS v2 ── ACTIVE -->
+    <g class="r1">
+      <circle cx="45" cy="78" r="5" fill="#00ff41" filter="url(#phosphor)" class="da"/>
+      <circle cx="45" cy="78" r="2" fill="#0a1a0a"/>
+      <text x="62"  y="83" font-size="13" fill="#00ff41" filter="url(#phosphor)" font-weight="bold">InPOS v2</text>
+      <text x="210" y="83" font-size="9"  fill="#00ff41" opacity="0.45">POS · Android · FinTech · Rails</text>
+      <rect x="425" y="71" width="96" height="16" rx="2" fill="none" stroke="#00ff41" stroke-width="0.6" opacity="0.5"/>
+      <text x="473" y="83" text-anchor="middle" font-size="9" fill="#00ff41" filter="url(#phosphor)" opacity="0.85" letter-spacing="1">ACTIVE</text>
+    </g>
 
-    <!-- Idle -->
-    <circle cx="310" cy="68" r="6" fill="#00ff41" class="p-idle" filter="url(#phosphor)"/>
-    <text x="310" y="72" text-anchor="middle" font-size="11" fill="#0a1a0a" font-weight="bold">2</text>
-    <text x="310" y="90" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.3" letter-spacing="1">IDLE</text>
-    <text x="310" y="102" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.15">30-90 days</text>
+    <line x1="30" y1="97" x2="530" y2="97" stroke="#00ff41" stroke-width="0.3" opacity="0.1"/>
 
-    <!-- Lost -->
-    <circle cx="430" cy="68" r="6" fill="#00ff41" opacity="0.1"/>
-    <text x="430" y="72" text-anchor="middle" font-size="11" fill="#0a1a0a" font-weight="bold" opacity="0.5">3</text>
-    <text x="430" y="90" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.15" letter-spacing="1">ARCHIVED</text>
-    <text x="430" y="102" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.1">90+ days</text>
+    <!-- ── Row 2: Ember Slime ── BUILD -->
+    <g class="r2">
+      <circle cx="45" cy="115" r="5" fill="none" stroke="#00ff41" stroke-width="1.5" class="db"/>
+      <text x="62"  y="120" font-size="13" fill="#00ff41" filter="url(#phosphor)" font-weight="bold">Ember Slime</text>
+      <text x="210" y="120" font-size="9"  fill="#00ff41" opacity="0.4">AI Companion · Tauri · Rust</text>
+      <rect x="425" y="108" width="96" height="16" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.35"/>
+      <text x="473" y="120" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.55" letter-spacing="1">BUILD</text>
+    </g>
 
-    <!-- Total -->
-    <line x1="480" y1="52" x2="480" y2="105" stroke="#00ff41" stroke-width="0.3" opacity="0.15"/>
-    <text x="515" y="65" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.3" letter-spacing="1">TOTAL</text>
-    <text x="515" y="90" text-anchor="middle" font-size="24" fill="#00ff41" filter="url(#ph-strong)" font-weight="bold" opacity="0.7">12</text>
+    <line x1="30" y1="134" x2="530" y2="134" stroke="#00ff41" stroke-width="0.3" opacity="0.1"/>
+
+    <!-- ── Row 3: MangaJigen ── MOD -->
+    <g class="r3">
+      <circle cx="45" cy="152" r="5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.3"/>
+      <text x="62"  y="157" font-size="13" fill="#00ff41" opacity="0.6" font-weight="bold">MangaJigen</text>
+      <text x="210" y="157" font-size="9"  fill="#00ff41" opacity="0.28">GBA · ROM Hack · Assembly</text>
+      <rect x="425" y="145" width="96" height="16" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.18"/>
+      <text x="473" y="157" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.28" letter-spacing="1">MOD</text>
+    </g>
+
+    <line x1="30" y1="171" x2="530" y2="171" stroke="#00ff41" stroke-width="0.3" opacity="0.1"/>
+
+    <!-- ── Row 4: dotfiles ── STABLE -->
+    <g class="r4">
+      <circle cx="45" cy="189" r="5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.2"/>
+      <text x="62"  y="194" font-size="13" fill="#00ff41" opacity="0.4" font-weight="bold">dotfiles</text>
+      <text x="210" y="194" font-size="9"  fill="#00ff41" opacity="0.22">Le Wagon · macOS · zsh</text>
+      <rect x="425" y="182" width="96" height="16" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.12"/>
+      <text x="473" y="194" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.2" letter-spacing="1">STABLE</text>
+    </g>
 
     <!-- Footer -->
-    <text x="280" y="125" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.1" letter-spacing="2">SCAN: 2026-03-28</text>
+    <line x1="30" y1="206" x2="530" y2="206" stroke="#00ff41" stroke-width="0.3" opacity="0.12"/>
+    <text x="280" y="215" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.1" letter-spacing="2">SCAN: 2026-04-06</text>
 
-    <rect x="8" y="8" width="544" height="124" rx="8" fill="url(#vignette)"/>
-    <rect x="8" y="8" width="544" height="124" rx="8" fill="url(#scan)"/>
+    <rect x="8" y="8" width="544" height="204" rx="8" fill="url(#vignette)"/>
+    <rect x="8" y="8" width="544" height="204" rx="8" fill="url(#scan)"/>
   </g>
 </svg>

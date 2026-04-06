@@ -12,10 +12,7 @@
       <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="gengar-glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+
     <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
       <stop offset="0%" style="stop-color:#0a1a0a; stop-opacity:0"/>
       <stop offset="100%" style="stop-color:#000000; stop-opacity:0.5"/>
@@ -33,20 +30,7 @@
       93% { opacity: 0.90; }
       94% { opacity: 0.97; }
     }
-    @keyframes ghost-float {
-      0%, 100% { transform: translate(0px, 0px); }
-      25% { transform: translate(3px, -2px); }
-      50% { transform: translate(0px, -3px); }
-      75% { transform: translate(-3px, -2px); }
-    }
-    @keyframes ghost-fade {
-      0%, 100% { opacity: 0.12; }
-      50% { opacity: 0.3; }
-    }
     .screen { animation: flicker 5s infinite; }
-    .ghost {
-      animation: ghost-float 4s ease-in-out infinite, ghost-fade 6s ease-in-out infinite;
-    }
   </style>
 
   <!-- Casing -->
@@ -462,17 +446,7 @@
   <rect x="887" y="150" width="13" height="13" rx="2" fill="#0a1a0a" stroke="#0d1a0d" stroke-width="0.5" stroke-opacity="0.15" filter="none" opacity="0.8"/>
   <rect x="887" y="166" width="13" height="13" rx="2" fill="#0d3a0d" stroke="#00ff41" stroke-width="0.5" stroke-opacity="0.3" filter="url(#glow-dim)" opacity="0.8"/>
 
-    <g class="ghost" filter="url(#gengar-glow)" transform="translate(345, 116) scale(1.2)">
-      <ellipse cx="7.5" cy="8" rx="7" ry="6.5" fill="#00ff41" opacity="0.12"/>
-      <path d="M2,5 L0,0 L4,3 Z" fill="#00ff41" opacity="0.1"/>
-      <path d="M7.5,2 L7.5,-2 L9,3 Z" fill="#00ff41" opacity="0.1"/>
-      <path d="M12,4 L15,1 L13,4 Z" fill="#00ff41" opacity="0.1"/>
-      <ellipse cx="5" cy="7" rx="2" ry="1.5" fill="#00ff41" opacity="0.25"/>
-      <ellipse cx="10.5" cy="7" rx="2" ry="1.5" fill="#00ff41" opacity="0.25"/>
-      <circle cx="5.5" cy="6.8" r="0.7" fill="#0a1a0a"/>
-      <circle cx="11" cy="6.8" r="0.7" fill="#0a1a0a"/>
-      <path d="M4.5,11 Q5.5,13 7.5,11 Q9.5,13 10.5,11" fill="none" stroke="#00ff41" stroke-width="0.6" opacity="0.2"/>
-    </g>
+
 
     <text x="466.5" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">LAST YEAR  //  REUZ</text>
 
