@@ -1,108 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%">
   <defs>
-    <filter id="phosphor">
-      <feGaussianBlur stdDeviation="1.2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="phosphor-strong">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <radialGradient id="screen-vignette" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" style="stop-color:#0a1a0a; stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:#000000; stop-opacity:0.6"/>
-    </radialGradient>
-    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="800" height="3">
-      <rect width="800" height="1.5" fill="transparent"/>
-      <rect y="1.5" width="800" height="1.5" fill="rgba(0,0,0,0.15)"/>
-    </pattern>
+    <linearGradient id="card-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <style>
+      .sans { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+      .mono { font-family: 'Segoe UI Mono', 'Cascadia Code', 'Courier New', monospace; }
+    </style>
   </defs>
 
-  <style>
-    text { font-family: 'Courier New', 'Consolas', monospace; }
-    @keyframes flicker {
-      0%, 100% { opacity: 0.97; }
-      93% { opacity: 0.90; }
-      94% { opacity: 0.98; }
-    }
-    @keyframes cursor-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    @keyframes scroll-ticker {
-      0% { transform: translateX(820px); }
-      100% { transform: translateX(-1200px); }
-    }
-    @keyframes scanbar {
-      0% { transform: translateY(-10px); }
-      100% { transform: translateY(150px); }
-    }
-    .screen { animation: flicker 4s infinite; }
-    .cursor { animation: cursor-blink 1s step-end infinite; }
-    .ticker { animation: scroll-ticker 28s linear infinite; }
-    .scanbar { animation: scanbar 8s linear infinite; opacity: 0.03; }
-  </style>
+  <!-- Card -->
+  <rect width="800" height="140" rx="6" fill="url(#card-bg)"/>
+  <rect x="0.5" y="0.5" width="799" height="139" rx="5.5" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <rect width="800" height="140" rx="12" fill="#1a1a0e"/>
-  <rect x="3" y="3" width="794" height="134" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
-  <circle cx="14" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
-  <circle cx="786" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
-  <circle cx="14" cy="126" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
-  <circle cx="786" cy="126" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="3" height="140" rx="2" fill="url(#accent)"/>
 
-  <rect x="8" y="8" width="784" height="124" rx="8" fill="#0a1a0a"/>
+  <!-- Name -->
+  <text x="22" y="44" class="sans" font-size="22" font-weight="700" fill="#e6edf3">Roberto Echeagaray</text>
 
-  <g class="screen">
-    <text x="400" y="50" text-anchor="middle" font-size="40" font-weight="bold" fill="#00ff41" filter="url(#phosphor-strong)" letter-spacing="10">REUZ</text>
-    <text x="400" y="74" text-anchor="middle" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3" opacity="0.7">AI DEVELOPMENT  /  SYSTEM ARCHITECTURE  /  FINTECH</text>
+  <!-- Role -->
+  <text x="22" y="66" class="sans" font-size="13" fill="#8b949e">Software Engineer</text>
 
-    <text x="30" y="92" font-size="9" fill="#00ff41" opacity="0.35" letter-spacing="1">MONTERREY, MX</text>
-    <text x="770" y="92" text-anchor="end" font-size="9" fill="#00ff41" opacity="0.35" letter-spacing="1">v4.2</text>
+  <!-- Location dot + text -->
+  <circle cx="22" cy="85" r="3" fill="#3fb950" opacity="0.8"/>
+  <text x="31" y="89" class="sans" font-size="12" fill="#6e7681">Monterrey, MX</text>
 
-    <line x1="20" y1="100" x2="780" y2="100" stroke="#00ff41" stroke-width="0.3" opacity="0.2"/>
-    <g clip-path="url(#t-clip)">
-      <text y="116" font-size="9" fill="#00ff41" opacity="0.2" class="ticker" letter-spacing="2">
-        AI AGENTS // CLAUDE CODE // LLM ORCHESTRATION // DISTRIBUTED SYSTEMS // PAYMENT APIs // POS DEVELOPMENT // FULL STACK // REAL-TIME SYSTEMS // RAG PIPELINES //
-      </text>
-    </g>
-    <clipPath id="t-clip">
-      <rect x="20" y="102" width="760" height="20"/>
-    </clipPath>
+  <!-- Separator -->
+  <line x1="22" y1="104" x2="460" y2="104" stroke="#21262d" stroke-width="1"/>
 
-    <!-- Neural network (top right decorative) -->
-    <g transform="translate(570, 14)">
-      <!-- Connections: input -> hidden -->
-      <line x1="5" y1="20" x2="35" y2="8"  stroke="#00ff41" stroke-width="0.4" opacity="0.1"/>
-      <line x1="5" y1="20" x2="35" y2="32" stroke="#00ff41" stroke-width="0.4" opacity="0.12"/>
-      <line x1="5" y1="20" x2="35" y2="56" stroke="#00ff41" stroke-width="0.4" opacity="0.06"/>
-      <line x1="5" y1="56" x2="35" y2="8"  stroke="#00ff41" stroke-width="0.4" opacity="0.06"/>
-      <line x1="5" y1="56" x2="35" y2="32" stroke="#00ff41" stroke-width="0.4" opacity="0.1"/>
-      <line x1="5" y1="56" x2="35" y2="56" stroke="#00ff41" stroke-width="0.4" opacity="0.12"/>
-      <!-- Connections: hidden -> output -->
-      <line x1="39" y1="8"  x2="70" y2="20" stroke="#00ff41" stroke-width="0.4" opacity="0.15"/>
-      <line x1="39" y1="32" x2="70" y2="20" stroke="#00ff41" stroke-width="0.4" opacity="0.18"/>
-      <line x1="39" y1="56" x2="70" y2="20" stroke="#00ff41" stroke-width="0.4" opacity="0.1"/>
-      <line x1="39" y1="8"  x2="70" y2="56" stroke="#00ff41" stroke-width="0.4" opacity="0.1"/>
-      <line x1="39" y1="32" x2="70" y2="56" stroke="#00ff41" stroke-width="0.4" opacity="0.15"/>
-      <line x1="39" y1="56" x2="70" y2="56" stroke="#00ff41" stroke-width="0.4" opacity="0.18"/>
-      <!-- Input nodes -->
-      <circle cx="5"  cy="20" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.3"/>
-      <circle cx="5"  cy="56" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.3"/>
-      <!-- Hidden nodes -->
-      <circle cx="37" cy="8"  r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.22"/>
-      <circle cx="37" cy="32" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.22"/>
-      <circle cx="37" cy="56" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.22"/>
-      <!-- Output nodes (lit) -->
-      <circle cx="70" cy="20" r="4" fill="none" stroke="#00ff41" stroke-width="1.2" filter="url(#phosphor)" opacity="0.5"/>
-      <circle cx="70" cy="56" r="4" fill="none" stroke="#00ff41" stroke-width="1.2" filter="url(#phosphor)" opacity="0.5"/>
-      <circle cx="70" cy="20" r="1.4" fill="#00ff41" opacity="0.7"/>
-      <circle cx="70" cy="56" r="1.4" fill="#00ff41" opacity="0.7"/>
-    </g>
+  <!-- Focus tags -->
+  <text x="22"  y="120" class="sans" font-size="11" fill="#58a6ff">AI Systems</text>
+  <text x="98"  y="120" class="sans" font-size="11" fill="#30363d">·</text>
+  <text x="107" y="120" class="sans" font-size="11" fill="#58a6ff">FinTech</text>
+  <text x="157" y="120" class="sans" font-size="11" fill="#30363d">·</text>
+  <text x="166" y="120" class="sans" font-size="11" fill="#58a6ff">System Architecture</text>
+  <text x="300" y="120" class="sans" font-size="11" fill="#30363d">·</text>
+  <text x="309" y="120" class="sans" font-size="11" fill="#58a6ff">Mechatronics</text>
+  <text x="406" y="120" class="sans" font-size="11" fill="#30363d">·</text>
+  <text x="415" y="120" class="sans" font-size="11" fill="#58a6ff">Payment Systems</text>
 
-    <rect x="30" y="124" width="8" height="2" fill="#00ff41" opacity="0.4" class="cursor"/>
+  <!-- Code snippet (right side, syntax-highlighted) -->
+  <text x="510" y="36" class="mono" font-size="11.5" fill="#ff7b72">const</text>
+  <text x="549" y="36" class="mono" font-size="11.5" fill="#e6edf3"> builder</text>
+  <text x="619" y="36" class="mono" font-size="11.5" fill="#ff7b72"> =</text>
+  <text x="630" y="36" class="mono" font-size="11.5" fill="#e6edf3"> {</text>
 
-    <rect class="scanbar" x="8" y="0" width="784" height="3" fill="#00ff41"/>
-    <rect x="8" y="8" width="784" height="124" rx="8" fill="url(#screen-vignette)"/>
-    <rect x="8" y="8" width="784" height="124" rx="8" fill="url(#scanlines)"/>
-  </g>
+  <text x="522" y="53" class="mono" font-size="11.5" fill="#79c0ff">ai</text>
+  <text x="537" y="53" class="mono" font-size="11.5" fill="#e6edf3">:</text>
+  <text x="544" y="53" class="mono" font-size="11.5" fill="#79c0ff"> 95</text>
+  <text x="565" y="53" class="mono" font-size="11.5" fill="#e6edf3">,</text>
+  <text x="580" y="53" class="mono" font-size="11.5" fill="#79c0ff">fullStack</text>
+  <text x="643" y="53" class="mono" font-size="11.5" fill="#e6edf3">:</text>
+  <text x="650" y="53" class="mono" font-size="11.5" fill="#79c0ff"> 98</text>
+  <text x="671" y="53" class="mono" font-size="11.5" fill="#e6edf3">,</text>
+
+  <text x="522" y="70" class="mono" font-size="11.5" fill="#79c0ff">fintech</text>
+  <text x="572" y="70" class="mono" font-size="11.5" fill="#e6edf3">:</text>
+  <text x="580" y="70" class="mono" font-size="11.5" fill="#79c0ff"> 80</text>
+  <text x="600" y="70" class="mono" font-size="11.5" fill="#e6edf3">,</text>
+  <text x="617" y="70" class="mono" font-size="11.5" fill="#79c0ff">mechatronics</text>
+  <text x="712" y="70" class="mono" font-size="11.5" fill="#e6edf3">:</text>
+  <text x="720" y="70" class="mono" font-size="11.5" fill="#79c0ff"> 90</text>
+  <text x="741" y="70" class="mono" font-size="11.5" fill="#e6edf3">,</text>
+
+  <text x="522" y="87" class="mono" font-size="11.5" fill="#d2a8ff">building</text>
+  <text x="581" y="87" class="mono" font-size="11.5" fill="#e6edf3">:</text>
+  <text x="588" y="87" class="mono" font-size="11.5" fill="#79c0ff"> true</text>
+  <text x="617" y="87" class="mono" font-size="11.5" fill="#e6edf3">,</text>
+  <text x="627" y="87" class="mono" font-size="11.5" fill="#8b949e">  // always</text>
+
+  <text x="510" y="104" class="mono" font-size="11.5" fill="#e6edf3">}</text>
 </svg>

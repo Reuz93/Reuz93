@@ -1,207 +1,190 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 492" width="100%">
   <defs>
-    <filter id="phosphor">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" style="stop-color:#0a1a0a; stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:#000000; stop-opacity:0.5"/>
-    </radialGradient>
-    <pattern id="scan" patternUnits="userSpaceOnUse" width="560" height="3">
-      <rect width="560" height="1.5" fill="transparent"/>
-      <rect y="1.5" width="560" height="1.5" fill="rgba(0,0,0,0.12)"/>
-    </pattern>
+    <style>
+      .sans { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+      .mono { font-family: 'Segoe UI Mono', 'Cascadia Code', 'Courier New', monospace; }
+      @keyframes da { 0%, 100% { opacity: 0.85; } 50% { opacity: 1; } }
+      @keyframes db { 0%, 100% { opacity: 0.40; } 50% { opacity: 0.75; } }
+      @keyframes ri  { from { opacity: 0; } to { opacity: 1; } }
+      .da  { animation: da  1.4s ease-in-out infinite; }
+      .db  { animation: db  2.0s ease-in-out infinite; }
+      .r1  { animation: ri .35s ease-out .05s  both; }
+      .r2  { animation: ri .35s ease-out .15s  both; }
+      .r3  { animation: ri .35s ease-out .25s  both; }
+      .r4  { animation: ri .35s ease-out .45s  both; }
+      .r5  { animation: ri .35s ease-out .55s  both; }
+      .r6  { animation: ri .35s ease-out .65s  both; }
+      .r7  { animation: ri .35s ease-out .75s  both; }
+      .r8  { animation: ri .35s ease-out .85s  both; }
+      .r9  { animation: ri .35s ease-out .95s  both; }
+      .r10 { animation: ri .35s ease-out 1.05s both; }
+      .r11 { animation: ri .35s ease-out 1.15s both; }
+      .r12 { animation: ri .35s ease-out 1.25s both; }
+      .r13 { animation: ri .35s ease-out 1.35s both; }
+      .r14 { animation: ri .35s ease-out 1.45s both; }
+    </style>
   </defs>
 
-  <style>
-    text { font-family: 'Courier New', 'Consolas', monospace; }
-    @keyframes flicker {
-      0%, 100% { opacity: 0.97; }
-      93% { opacity: 0.90; }
-      94% { opacity: 0.97; }
-    }
-    @keyframes da { 0%, 100% { opacity: 0.9; } 50% { opacity: 1;   } }
-    @keyframes db { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
-    @keyframes ri  { from { opacity: 0; } to { opacity: 1; } }
-    .screen { animation: flicker 5s infinite; }
-    .da { animation: da 1.2s ease-in-out infinite; }
-    .db { animation: db 1.8s ease-in-out infinite; }
-    .r1  { animation: ri .4s ease-out .05s  both; }
-    .r2  { animation: ri .4s ease-out .15s  both; }
-    .r3  { animation: ri .4s ease-out .25s  both; }
-    .r4  { animation: ri .4s ease-out .35s  both; }
-    .r5  { animation: ri .4s ease-out .50s  both; }
-    .r6  { animation: ri .4s ease-out .60s  both; }
-    .r7  { animation: ri .4s ease-out .70s  both; }
-    .r8  { animation: ri .4s ease-out .80s  both; }
-    .r9  { animation: ri .4s ease-out .90s  both; }
-    .r10 { animation: ri .4s ease-out 1.00s both; }
-    .r11 { animation: ri .4s ease-out 1.10s both; }
-    .r12 { animation: ri .4s ease-out 1.20s both; }
-    .r13 { animation: ri .4s ease-out 1.30s both; }
-    .r14 { animation: ri .4s ease-out 1.40s both; }
-    .r15 { animation: ri .4s ease-out 1.50s both; }
-  </style>
+  <!-- Card -->
+  <rect width="560" height="492" rx="6" fill="#161b22"/>
+  <rect x="0.5" y="0.5" width="559" height="491" rx="5.5" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <!-- Frame -->
-  <rect width="560" height="492" rx="12" fill="#1a1a0e"/>
-  <rect x="3" y="3" width="554" height="486" rx="10" fill="#0d0d06" stroke="#2a2a1a" stroke-width="2"/>
-  <circle cx="14"  cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
-  <circle cx="546" cy="14" r="3" fill="none" stroke="#3a3a2a" stroke-width="1"/>
-  <rect x="8" y="8" width="544" height="476" rx="8" fill="#0a1a0a"/>
+  <!-- Header -->
+  <text x="20"  y="34" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Repositories</text>
+  <text x="115" y="34" class="sans" font-size="11" fill="#484f58">14 repos</text>
+  <line x1="0" y1="48" x2="560" y2="48" stroke="#21262d" stroke-width="1"/>
 
-  <g class="screen">
+  <!-- Column labels -->
+  <text x="52"  y="62" class="sans" font-size="10" fill="#484f58">name</text>
+  <text x="220" y="62" class="sans" font-size="10" fill="#484f58">stack</text>
+  <text x="436" y="62" class="sans" font-size="10" fill="#484f58">status</text>
+  <line x1="0" y1="68" x2="560" y2="68" stroke="#21262d" stroke-width="1"/>
 
-    <!-- ── Header ── -->
-    <text x="30"  y="34" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="3">PROJECTS</text>
-    <text x="142" y="34" font-size="9"  fill="#00ff41" opacity="0.28" letter-spacing="1">--all</text>
-    <line x1="30" y1="43" x2="530" y2="43" stroke="#00ff41" stroke-width="0.4" opacity="0.2"/>
-    <text x="65"  y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">NAME</text>
-    <text x="210" y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">STACK</text>
-    <text x="432" y="57" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">STATUS</text>
+  <!-- ══ NAMED REPOS ══ -->
 
-    <!-- ══════════════ PUBLIC / NAMED ══════════════ -->
-
-    <!-- Row 1 · InPOS v2 · ACTIVE -->
-    <g class="r1">
-      <circle cx="44" cy="78"  r="5" fill="#00ff41" filter="url(#phosphor)" class="da"/>
-      <circle cx="44" cy="78"  r="2" fill="#0a1a0a"/>
-      <text x="60"  y="83"  font-size="13" fill="#00ff41" filter="url(#phosphor)" font-weight="bold">InPOS v2</text>
-      <text x="210" y="83"  font-size="9"  fill="#00ff41" opacity="0.45">POS · Android · FinTech · Rails</text>
-      <rect x="424" y="71"  width="98" height="15" rx="2" fill="none" stroke="#00ff41" stroke-width="0.6" opacity="0.5"/>
-      <text x="473" y="83"  text-anchor="middle" font-size="9" fill="#00ff41" filter="url(#phosphor)" opacity="0.85" letter-spacing="1">ACTIVE</text>
-    </g>
-    <line x1="30" y1="96" x2="530" y2="96" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
-
-    <!-- Row 2 · Ember Slime · BUILD -->
-    <g class="r2">
-      <circle cx="44" cy="113" r="5" fill="none" stroke="#00ff41" stroke-width="1.5" class="db"/>
-      <text x="60"  y="118" font-size="13" fill="#00ff41" filter="url(#phosphor)" font-weight="bold">Ember Slime</text>
-      <text x="210" y="118" font-size="9"  fill="#00ff41" opacity="0.40">AI Companion · Tauri · Rust</text>
-      <rect x="424" y="106" width="98" height="15" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.35"/>
-      <text x="473" y="118" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.55" letter-spacing="1">BUILD</text>
-    </g>
-    <line x1="30" y1="131" x2="530" y2="131" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
-
-    <!-- Row 3 · MangaJigen · MOD -->
-    <g class="r3">
-      <circle cx="44" cy="148" r="5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.30"/>
-      <text x="60"  y="153" font-size="13" fill="#00ff41" opacity="0.60" font-weight="bold">MangaJigen</text>
-      <text x="210" y="153" font-size="9"  fill="#00ff41" opacity="0.28">GBA · ROM Hack · Assembly</text>
-      <rect x="424" y="141" width="98" height="15" rx="2" fill="none" stroke="#00ff41" stroke-width="0.5" opacity="0.18"/>
-      <text x="473" y="153" text-anchor="middle" font-size="9" fill="#00ff41" opacity="0.28" letter-spacing="1">MOD</text>
-    </g>
-    <line x1="30" y1="166" x2="530" y2="166" stroke="#00ff41" stroke-width="0.3" opacity="0.08"/>
-
-    <!-- ══════════════ CLASSIFIED ══════════════ -->
-    <line x1="30" y1="204" x2="530" y2="204" stroke="#00ff41" stroke-width="0.4" opacity="0.18"/>
-    <text x="30" y="215" font-size="7" fill="#00ff41" opacity="0.22" letter-spacing="2">CLASSIFIED  ─────────────────────────────────────────────</text>
-
-    <!-- Row 5 · ████████ · Python · AI/ML · ACTIVE -->
-    <g class="r5">
-      <circle cx="44" cy="230" r="3.5" fill="#00ff41" opacity="0.55" class="da"/>
-      <text x="60"  y="235" font-size="11" fill="#00ff41" opacity="0.60" font-weight="bold">████████</text>
-      <text x="210" y="235" font-size="8"  fill="#00ff41" opacity="0.30">Python · AI/ML · R&amp;D</text>
-      <rect x="424" y="224" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.30"/>
-      <text x="473" y="235" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.45" letter-spacing="1">ACTIVE</text>
-    </g>
-
-    <!-- Row 6 · ████████████████ · Rails · E-Commerce · ACTIVE -->
-    <g class="r6">
-      <circle cx="44" cy="254" r="3.5" fill="#00ff41" opacity="0.55" class="da"/>
-      <text x="60"  y="259" font-size="11" fill="#00ff41" opacity="0.60" font-weight="bold">████████████████</text>
-      <text x="210" y="259" font-size="8"  fill="#00ff41" opacity="0.30">Rails · E-Commerce</text>
-      <rect x="424" y="248" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.30"/>
-      <text x="473" y="259" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.45" letter-spacing="1">ACTIVE</text>
-    </g>
-
-    <!-- Row 7 · ███████████ · AI Runtime · Termux · ACTIVE -->
-    <g class="r7">
-      <circle cx="44" cy="278" r="3.5" fill="#00ff41" opacity="0.55" class="da"/>
-      <text x="60"  y="283" font-size="11" fill="#00ff41" opacity="0.60" font-weight="bold">███████████</text>
-      <text x="210" y="283" font-size="8"  fill="#00ff41" opacity="0.30">AI Runtime · Termux · Magisk</text>
-      <rect x="424" y="272" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.30"/>
-      <text x="473" y="283" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.45" letter-spacing="1">ACTIVE</text>
-    </g>
-
-    <!-- Row 8 · ███████ · Payment API · Kotlin · ACTIVE -->
-    <g class="r8">
-      <circle cx="44" cy="302" r="3.5" fill="#00ff41" opacity="0.55" class="da"/>
-      <text x="60"  y="307" font-size="11" fill="#00ff41" opacity="0.60" font-weight="bold">███████</text>
-      <text x="210" y="307" font-size="8"  fill="#00ff41" opacity="0.30">Payment API · Kotlin · REST</text>
-      <rect x="424" y="296" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.30"/>
-      <text x="473" y="307" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.45" letter-spacing="1">ACTIVE</text>
-    </g>
-
-    <!-- Row 9 · ███████ · Claude Orchestrator · TS · ACTIVE -->
-    <g class="r9">
-      <circle cx="44" cy="326" r="3.5" fill="#00ff41" opacity="0.55" class="da"/>
-      <text x="60"  y="331" font-size="11" fill="#00ff41" opacity="0.60" font-weight="bold">███████</text>
-      <text x="210" y="331" font-size="8"  fill="#00ff41" opacity="0.30">Claude Orchestrator · TypeScript</text>
-      <rect x="424" y="320" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.30"/>
-      <text x="473" y="331" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.45" letter-spacing="1">ACTIVE</text>
-    </g>
-
-    <!-- Row 10 · █████ · Distributed · Agents · BUILD -->
-    <g class="r10">
-      <circle cx="44" cy="350" r="3.5" fill="none" stroke="#00ff41" stroke-width="1.2" opacity="0.45" class="db"/>
-      <text x="60"  y="355" font-size="11" fill="#00ff41" opacity="0.55" font-weight="bold">█████</text>
-      <text x="210" y="355" font-size="8"  fill="#00ff41" opacity="0.28">Distributed · IoT · Agents</text>
-      <rect x="424" y="344" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.25"/>
-      <text x="473" y="355" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.38" letter-spacing="1">BUILD</text>
-    </g>
-
-    <!-- Row 11 · ██████ · Rails · Web App · STABLE -->
-    <g class="r11">
-      <circle cx="44" cy="374" r="3.5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.28"/>
-      <text x="60"  y="379" font-size="11" fill="#00ff41" opacity="0.48" font-weight="bold">██████</text>
-      <text x="210" y="379" font-size="8"  fill="#00ff41" opacity="0.22">Rails · Web App · Ruby</text>
-      <rect x="424" y="368" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.18"/>
-      <text x="473" y="379" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.28" letter-spacing="1">STABLE</text>
-    </g>
-
-    <!-- Row 12 · ████████████████ · Next.js · TS · STABLE -->
-    <g class="r12">
-      <circle cx="44" cy="398" r="3.5" fill="none" stroke="#00ff41" stroke-width="1" opacity="0.25"/>
-      <text x="60"  y="403" font-size="11" fill="#00ff41" opacity="0.45" font-weight="bold">████████████████</text>
-      <text x="210" y="403" font-size="8"  fill="#00ff41" opacity="0.20">Next.js · TypeScript</text>
-      <rect x="424" y="392" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.15"/>
-      <text x="473" y="403" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.25" letter-spacing="1">STABLE</text>
-    </g>
-
-    <!-- Row 13 · ██████████████ · E-Commerce · ARCHIVED -->
-    <g class="r13">
-      <circle cx="44" cy="422" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.18"/>
-      <text x="60"  y="427" font-size="11" fill="#00ff41" opacity="0.35" font-weight="bold">██████████████</text>
-      <text x="210" y="427" font-size="8"  fill="#00ff41" opacity="0.16">E-Commerce · Rails (legacy)</text>
-      <rect x="424" y="416" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.12"/>
-      <text x="473" y="427" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.18" letter-spacing="1">ARCHIVED</text>
-    </g>
-
-    <!-- Row 14 · ███████████ · Auction · Rails · ARCHIVED -->
-    <g class="r14">
-      <circle cx="44" cy="446" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.16"/>
-      <text x="60"  y="451" font-size="11" fill="#00ff41" opacity="0.32" font-weight="bold">███████████</text>
-      <text x="210" y="451" font-size="8"  fill="#00ff41" opacity="0.14">Auction · Rails · Ruby</text>
-      <rect x="424" y="440" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.10"/>
-      <text x="473" y="451" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.16" letter-spacing="1">ARCHIVED</text>
-    </g>
-
-    <!-- Row 15 · ██████████████ · POS Clone · Smali · ARCHIVED -->
-    <g class="r15">
-      <circle cx="44" cy="470" r="3.5" fill="none" stroke="#00ff41" stroke-width="0.8" opacity="0.14"/>
-      <text x="60"  y="475" font-size="11" fill="#00ff41" opacity="0.28" font-weight="bold">██████████████</text>
-      <text x="210" y="475" font-size="8"  fill="#00ff41" opacity="0.12">POS Clone · Smali · Android</text>
-      <rect x="424" y="464" width="98" height="14" rx="2" fill="none" stroke="#00ff41" stroke-width="0.4" opacity="0.08"/>
-      <text x="473" y="475" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.14" letter-spacing="1">ARCHIVED</text>
-    </g>
-
-    <!-- ── Footer ── -->
-    <line x1="30" y1="482" x2="530" y2="482" stroke="#00ff41" stroke-width="0.3" opacity="0.10"/>
-    <text x="280" y="490" text-anchor="middle" font-size="7" fill="#00ff41" opacity="0.08" letter-spacing="2">SCAN: 2026-04-06</text>
-
-    <rect x="8" y="8" width="544" height="476" rx="8" fill="url(#vignette)"/>
-    <rect x="8" y="8" width="544" height="476" rx="8" fill="url(#scan)"/>
+  <!-- Row 1 · InPOS v2 · Kotlin/Rails · ACTIVE -->
+  <g class="r1">
+    <circle cx="22" cy="84" r="5" fill="#A97BFF" class="da"/>
+    <text x="35"  y="89" class="sans" font-size="13" font-weight="600" fill="#e6edf3">InPOS v2</text>
+    <text x="220" y="89" class="sans" font-size="10" fill="#8b949e">POS · Android · FinTech · Rails</text>
+    <rect  x="430" y="76" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="85" r="3" fill="#3fb950"/>
+    <text x="450" y="89" class="sans" font-size="10" fill="#3fb950">Active</text>
   </g>
+  <line x1="0" y1="100" x2="560" y2="100" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 2 · Ember Slime · Rust · BUILD -->
+  <g class="r2">
+    <circle cx="22" cy="116" r="5" fill="#dea584" class="db"/>
+    <text x="35"  y="121" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Ember Slime</text>
+    <text x="220" y="121" class="sans" font-size="10" fill="#8b949e">AI Companion · Tauri · Rust</text>
+    <rect  x="430" y="108" width="112" height="18" rx="9" fill="#9e6a0326" stroke="#9e6a03" stroke-width="0.8"/>
+    <circle cx="443" cy="117" r="3" fill="#d29922"/>
+    <text x="450" y="121" class="sans" font-size="10" fill="#d29922">In progress</text>
+  </g>
+  <line x1="0" y1="132" x2="560" y2="132" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 3 · MangaJigen · ASM · MOD -->
+  <g class="r3">
+    <circle cx="22" cy="148" r="5" fill="#6e7681" opacity="0.7"/>
+    <text x="35"  y="153" class="sans" font-size="13" font-weight="600" fill="#c9d1d9">MangaJigen</text>
+    <text x="220" y="153" class="sans" font-size="10" fill="#6e7681">GBA · ROM Hack · Assembly</text>
+    <rect  x="430" y="140" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
+    <circle cx="443" cy="149" r="3" fill="#6e7681"/>
+    <text x="450" y="153" class="sans" font-size="10" fill="#8b949e">Active mod</text>
+  </g>
+  <line x1="0" y1="164" x2="560" y2="164" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ══ PRIVATE / CLASSIFIED ══ -->
+  <text x="20" y="180" class="sans" font-size="10" fill="#484f58">Private repositories</text>
+  <line x1="0" y1="187" x2="560" y2="187" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 4 · Python · AI/ML · ACTIVE -->
+  <g class="r4">
+    <circle cx="22" cy="203" r="5" fill="#3572A5" class="da"/>
+    <text x="35"  y="208" class="sans" font-size="12" font-weight="600" fill="#8b949e">████████</text>
+    <text x="220" y="208" class="sans" font-size="10" fill="#6e7681">Python · AI / ML · R&amp;D</text>
+    <rect  x="430" y="195" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="204" r="3" fill="#3fb950"/>
+    <text x="450" y="208" class="sans" font-size="10" fill="#3fb950">Active</text>
+  </g>
+  <line x1="0" y1="219" x2="560" y2="219" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 5 · Ruby · E-Commerce · ACTIVE -->
+  <g class="r5">
+    <circle cx="22" cy="235" r="5" fill="#cc342d" class="da"/>
+    <text x="35"  y="240" class="sans" font-size="12" font-weight="600" fill="#8b949e">████████████████</text>
+    <text x="220" y="240" class="sans" font-size="10" fill="#6e7681">Rails · E-Commerce</text>
+    <rect  x="430" y="227" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="236" r="3" fill="#3fb950"/>
+    <text x="450" y="240" class="sans" font-size="10" fill="#3fb950">Active</text>
+  </g>
+  <line x1="0" y1="251" x2="560" y2="251" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 6 · — · AI Runtime · ACTIVE -->
+  <g class="r6">
+    <circle cx="22" cy="267" r="5" fill="#8b949e" opacity="0.6" class="da"/>
+    <text x="35"  y="272" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████████</text>
+    <text x="220" y="272" class="sans" font-size="10" fill="#6e7681">AI Runtime · Termux · Magisk</text>
+    <rect  x="430" y="259" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="268" r="3" fill="#3fb950"/>
+    <text x="450" y="272" class="sans" font-size="10" fill="#3fb950">Active</text>
+  </g>
+  <line x1="0" y1="283" x2="560" y2="283" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 7 · Kotlin · Payment API · ACTIVE -->
+  <g class="r7">
+    <circle cx="22" cy="299" r="5" fill="#A97BFF" class="da"/>
+    <text x="35"  y="304" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████</text>
+    <text x="220" y="304" class="sans" font-size="10" fill="#6e7681">Payment API · Kotlin · REST</text>
+    <rect  x="430" y="291" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="300" r="3" fill="#3fb950"/>
+    <text x="450" y="304" class="sans" font-size="10" fill="#3fb950">Active</text>
+  </g>
+  <line x1="0" y1="315" x2="560" y2="315" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 8 · TypeScript · Claude Orch · ACTIVE -->
+  <g class="r8">
+    <circle cx="22" cy="331" r="5" fill="#3178c6" class="da"/>
+    <text x="35"  y="336" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████</text>
+    <text x="220" y="336" class="sans" font-size="10" fill="#6e7681">Claude Orchestrator · TypeScript</text>
+    <rect  x="430" y="323" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
+    <circle cx="443" cy="332" r="3" fill="#3fb950"/>
+    <text x="450" y="336" class="sans" font-size="10" fill="#3fb950">Active</text>
+  </g>
+  <line x1="0" y1="347" x2="560" y2="347" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 9 · — · Distributed Agents · BUILD -->
+  <g class="r9">
+    <circle cx="22" cy="363" r="5" fill="#8b949e" opacity="0.5" class="db"/>
+    <text x="35"  y="368" class="sans" font-size="12" font-weight="600" fill="#8b949e">█████</text>
+    <text x="220" y="368" class="sans" font-size="10" fill="#6e7681">Distributed · IoT · Agents</text>
+    <rect  x="430" y="355" width="112" height="18" rx="9" fill="#9e6a0326" stroke="#9e6a03" stroke-width="0.8"/>
+    <circle cx="443" cy="364" r="3" fill="#d29922"/>
+    <text x="450" y="368" class="sans" font-size="10" fill="#d29922">In progress</text>
+  </g>
+  <line x1="0" y1="379" x2="560" y2="379" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 10 · Ruby · Rails Web · STABLE -->
+  <g class="r10">
+    <circle cx="22" cy="395" r="5" fill="#cc342d" opacity="0.55"/>
+    <text x="35"  y="400" class="sans" font-size="12" font-weight="600" fill="#6e7681">██████</text>
+    <text x="220" y="400" class="sans" font-size="10" fill="#484f58">Rails · Web App · Ruby</text>
+    <rect  x="430" y="387" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
+    <text x="473" y="400" class="sans" font-size="10" fill="#6e7681" text-anchor="middle">Stable</text>
+  </g>
+  <line x1="0" y1="411" x2="560" y2="411" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 11 · TypeScript · Next.js · STABLE -->
+  <g class="r11">
+    <circle cx="22" cy="427" r="5" fill="#3178c6" opacity="0.50"/>
+    <text x="35"  y="432" class="sans" font-size="12" font-weight="600" fill="#6e7681">████████████████</text>
+    <text x="220" y="432" class="sans" font-size="10" fill="#484f58">Next.js · TypeScript</text>
+    <rect  x="430" y="419" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
+    <text x="473" y="432" class="sans" font-size="10" fill="#6e7681" text-anchor="middle">Stable</text>
+  </g>
+  <line x1="0" y1="443" x2="560" y2="443" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 12 · Ruby · E-Commerce legacy · ARCHIVED -->
+  <g class="r12">
+    <circle cx="22" cy="459" r="5" fill="#484f58"/>
+    <text x="35"  y="464" class="sans" font-size="12" font-weight="600" fill="#484f58">██████████████</text>
+    <text x="220" y="464" class="sans" font-size="10" fill="#30363d">E-Commerce · Rails (legacy)</text>
+    <rect  x="430" y="451" width="112" height="18" rx="9" fill="#161b22" stroke="#21262d" stroke-width="0.8"/>
+    <text x="473" y="464" class="sans" font-size="10" fill="#484f58" text-anchor="middle">Archived</text>
+  </g>
+  <line x1="0" y1="475" x2="560" y2="475" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Row 13 · Ruby · Auction · ARCHIVED -->
+  <g class="r13">
+    <circle cx="22" cy="491" r="0" fill="none"/>
+  </g>
+
+  <!-- Row 13 · Ruby · Auction · ARCHIVED -->
+  <circle cx="22" cy="486" r="5" fill="#484f58" opacity="0.7"/>
+  <text x="35"  y="491" class="sans" font-size="12" font-weight="600" fill="#30363d">███████████</text>
+  <text x="220" y="491" class="sans" font-size="10" fill="#21262d">Auction · Rails · Ruby</text>
+  <rect  x="430" y="478" width="112" height="18" rx="9" fill="#161b22" stroke="#21262d" stroke-width="0.8"/>
+  <text x="473" y="491" class="sans" font-size="10" fill="#30363d" text-anchor="middle">Archived</text>
+
 </svg>
