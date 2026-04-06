@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 492" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 508" width="100%">
   <defs>
+    <clipPath id="nc">
+      <rect x="0" y="0" width="214" height="600"/>
+    </clipPath>
     <style>
       .sans { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
       .mono { font-family: 'Segoe UI Mono', 'Cascadia Code', 'Courier New', monospace; }
@@ -26,8 +29,8 @@
   </defs>
 
   <!-- Card -->
-  <rect width="560" height="492" rx="6" fill="#161b22"/>
-  <rect x="0.5" y="0.5" width="559" height="491" rx="5.5" fill="none" stroke="#30363d" stroke-width="1"/>
+  <rect width="560" height="508" rx="6" fill="#161b22"/>
+  <rect x="0.5" y="0.5" width="559" height="507" rx="5.5" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <!-- Header -->
   <text x="20"  y="34" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Repositories</text>
@@ -45,7 +48,7 @@
   <!-- Row 1 · InPOS v2 · Kotlin/Rails · ACTIVE -->
   <g class="r1">
     <circle cx="22" cy="84" r="5" fill="#A97BFF" class="da"/>
-    <text x="35"  y="89" class="sans" font-size="13" font-weight="600" fill="#e6edf3">InPOS v2</text>
+    <text x="35"  y="89" class="sans" font-size="13" font-weight="600" fill="#e6edf3" clip-path="url(#nc)">InPOS v2</text>
     <text x="220" y="89" class="sans" font-size="10" fill="#8b949e">POS · Android · FinTech · Rails</text>
     <rect  x="430" y="76" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="85" r="3" fill="#3fb950"/>
@@ -56,7 +59,7 @@
   <!-- Row 2 · Ember Slime · Rust · BUILD -->
   <g class="r2">
     <circle cx="22" cy="116" r="5" fill="#dea584" class="db"/>
-    <text x="35"  y="121" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Ember Slime</text>
+    <text x="35"  y="121" class="sans" font-size="13" font-weight="600" fill="#e6edf3" clip-path="url(#nc)">Ember Slime</text>
     <text x="220" y="121" class="sans" font-size="10" fill="#8b949e">AI Companion · Tauri · Rust</text>
     <rect  x="430" y="108" width="112" height="18" rx="9" fill="#9e6a0326" stroke="#9e6a03" stroke-width="0.8"/>
     <circle cx="443" cy="117" r="3" fill="#d29922"/>
@@ -67,7 +70,7 @@
   <!-- Row 3 · MangaJigen · ASM · MOD -->
   <g class="r3">
     <circle cx="22" cy="148" r="5" fill="#6e7681" opacity="0.7"/>
-    <text x="35"  y="153" class="sans" font-size="13" font-weight="600" fill="#c9d1d9">MangaJigen</text>
+    <text x="35"  y="153" class="sans" font-size="13" font-weight="600" fill="#c9d1d9" clip-path="url(#nc)">MangaJigen</text>
     <text x="220" y="153" class="sans" font-size="10" fill="#6e7681">GBA · ROM Hack · Assembly</text>
     <rect  x="430" y="140" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
     <circle cx="443" cy="149" r="3" fill="#6e7681"/>
@@ -82,7 +85,7 @@
   <!-- Row 4 · Python · AI/ML · ACTIVE -->
   <g class="r4">
     <circle cx="22" cy="203" r="5" fill="#3572A5" class="da"/>
-    <text x="35"  y="208" class="sans" font-size="12" font-weight="600" fill="#8b949e">████████</text>
+    <text x="35"  y="208" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">████████</text>
     <text x="220" y="208" class="sans" font-size="10" fill="#6e7681">Python · AI / ML · R&amp;D</text>
     <rect  x="430" y="195" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="204" r="3" fill="#3fb950"/>
@@ -93,7 +96,7 @@
   <!-- Row 5 · Ruby · E-Commerce · ACTIVE -->
   <g class="r5">
     <circle cx="22" cy="235" r="5" fill="#cc342d" class="da"/>
-    <text x="35"  y="240" class="sans" font-size="12" font-weight="600" fill="#8b949e">████████████████</text>
+    <text x="35"  y="240" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">████████████████</text>
     <text x="220" y="240" class="sans" font-size="10" fill="#6e7681">Rails · E-Commerce</text>
     <rect  x="430" y="227" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="236" r="3" fill="#3fb950"/>
@@ -104,7 +107,7 @@
   <!-- Row 6 · — · AI Runtime · ACTIVE -->
   <g class="r6">
     <circle cx="22" cy="267" r="5" fill="#8b949e" opacity="0.6" class="da"/>
-    <text x="35"  y="272" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████████</text>
+    <text x="35"  y="272" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">███████████</text>
     <text x="220" y="272" class="sans" font-size="10" fill="#6e7681">AI Runtime · Termux · Magisk</text>
     <rect  x="430" y="259" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="268" r="3" fill="#3fb950"/>
@@ -115,7 +118,7 @@
   <!-- Row 7 · Kotlin · Payment API · ACTIVE -->
   <g class="r7">
     <circle cx="22" cy="299" r="5" fill="#A97BFF" class="da"/>
-    <text x="35"  y="304" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████</text>
+    <text x="35"  y="304" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">███████</text>
     <text x="220" y="304" class="sans" font-size="10" fill="#6e7681">Payment API · Kotlin · REST</text>
     <rect  x="430" y="291" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="300" r="3" fill="#3fb950"/>
@@ -126,7 +129,7 @@
   <!-- Row 8 · TypeScript · Claude Orch · ACTIVE -->
   <g class="r8">
     <circle cx="22" cy="331" r="5" fill="#3178c6" class="da"/>
-    <text x="35"  y="336" class="sans" font-size="12" font-weight="600" fill="#8b949e">███████</text>
+    <text x="35"  y="336" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">███████</text>
     <text x="220" y="336" class="sans" font-size="10" fill="#6e7681">Claude Orchestrator · TypeScript</text>
     <rect  x="430" y="323" width="112" height="18" rx="9" fill="#1f6feb26" stroke="#1f6feb" stroke-width="0.8"/>
     <circle cx="443" cy="332" r="3" fill="#3fb950"/>
@@ -137,7 +140,7 @@
   <!-- Row 9 · — · Distributed Agents · BUILD -->
   <g class="r9">
     <circle cx="22" cy="363" r="5" fill="#8b949e" opacity="0.5" class="db"/>
-    <text x="35"  y="368" class="sans" font-size="12" font-weight="600" fill="#8b949e">█████</text>
+    <text x="35"  y="368" class="sans" font-size="12" font-weight="600" fill="#8b949e" clip-path="url(#nc)">█████</text>
     <text x="220" y="368" class="sans" font-size="10" fill="#6e7681">Distributed · IoT · Agents</text>
     <rect  x="430" y="355" width="112" height="18" rx="9" fill="#9e6a0326" stroke="#9e6a03" stroke-width="0.8"/>
     <circle cx="443" cy="364" r="3" fill="#d29922"/>
@@ -148,7 +151,7 @@
   <!-- Row 10 · Ruby · Rails Web · STABLE -->
   <g class="r10">
     <circle cx="22" cy="395" r="5" fill="#cc342d" opacity="0.55"/>
-    <text x="35"  y="400" class="sans" font-size="12" font-weight="600" fill="#6e7681">██████</text>
+    <text x="35"  y="400" class="sans" font-size="12" font-weight="600" fill="#6e7681" clip-path="url(#nc)">██████</text>
     <text x="220" y="400" class="sans" font-size="10" fill="#484f58">Rails · Web App · Ruby</text>
     <rect  x="430" y="387" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
     <text x="473" y="400" class="sans" font-size="10" fill="#6e7681" text-anchor="middle">Stable</text>
@@ -158,7 +161,7 @@
   <!-- Row 11 · TypeScript · Next.js · STABLE -->
   <g class="r11">
     <circle cx="22" cy="427" r="5" fill="#3178c6" opacity="0.50"/>
-    <text x="35"  y="432" class="sans" font-size="12" font-weight="600" fill="#6e7681">████████████████</text>
+    <text x="35"  y="432" class="sans" font-size="12" font-weight="600" fill="#6e7681" clip-path="url(#nc)">████████████████</text>
     <text x="220" y="432" class="sans" font-size="10" fill="#484f58">Next.js · TypeScript</text>
     <rect  x="430" y="419" width="112" height="18" rx="9" fill="#21262d" stroke="#30363d" stroke-width="0.8"/>
     <text x="473" y="432" class="sans" font-size="10" fill="#6e7681" text-anchor="middle">Stable</text>
@@ -168,7 +171,7 @@
   <!-- Row 12 · Ruby · E-Commerce legacy · ARCHIVED -->
   <g class="r12">
     <circle cx="22" cy="459" r="5" fill="#484f58"/>
-    <text x="35"  y="464" class="sans" font-size="12" font-weight="600" fill="#484f58">██████████████</text>
+    <text x="35"  y="464" class="sans" font-size="12" font-weight="600" fill="#484f58" clip-path="url(#nc)">██████████████</text>
     <text x="220" y="464" class="sans" font-size="10" fill="#30363d">E-Commerce · Rails (legacy)</text>
     <rect  x="430" y="451" width="112" height="18" rx="9" fill="#161b22" stroke="#21262d" stroke-width="0.8"/>
     <text x="473" y="464" class="sans" font-size="10" fill="#484f58" text-anchor="middle">Archived</text>
@@ -177,14 +180,11 @@
 
   <!-- Row 13 · Ruby · Auction · ARCHIVED -->
   <g class="r13">
-    <circle cx="22" cy="491" r="0" fill="none"/>
+    <circle cx="22" cy="491" r="5" fill="#484f58" opacity="0.7"/>
+    <text x="35"  y="496" class="sans" font-size="12" font-weight="600" fill="#30363d" clip-path="url(#nc)">███████████</text>
+    <text x="220" y="496" class="sans" font-size="10" fill="#21262d">Auction · Rails · Ruby</text>
+    <rect  x="430" y="482" width="112" height="18" rx="9" fill="#161b22" stroke="#21262d" stroke-width="0.8"/>
+    <text x="473" y="496" class="sans" font-size="10" fill="#30363d" text-anchor="middle">Archived</text>
   </g>
-
-  <!-- Row 13 · Ruby · Auction · ARCHIVED -->
-  <circle cx="22" cy="486" r="5" fill="#484f58" opacity="0.7"/>
-  <text x="35"  y="491" class="sans" font-size="12" font-weight="600" fill="#30363d">███████████</text>
-  <text x="220" y="491" class="sans" font-size="10" fill="#21262d">Auction · Rails · Ruby</text>
-  <rect  x="430" y="478" width="112" height="18" rx="9" fill="#161b22" stroke="#21262d" stroke-width="0.8"/>
-  <text x="473" y="491" class="sans" font-size="10" fill="#30363d" text-anchor="middle">Archived</text>
 
 </svg>
