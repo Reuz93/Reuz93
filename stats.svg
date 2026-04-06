@@ -27,9 +27,9 @@
     }
     @keyframes bar1 { 0% { width: 0; } 100% { width: 285px; } }
     @keyframes bar2 { 0% { width: 0; } 100% { width: 295px; } }
-    @keyframes bar3 { 0% { width: 0; } 100% { width: 255px; } }
+    @keyframes bar3 { 0% { width: 0; } 100% { width: 261px; } }
     @keyframes bar4 { 0% { width: 0; } 100% { width: 240px; } }
-    @keyframes bar5 { 0% { width: 0; } 100% { width: 210px; } }
+    @keyframes bar5 { 0% { width: 0; } 100% { width: 270px; } }
     @keyframes nn-pulse1 { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
     @keyframes nn-pulse2 { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
     .screen { animation: flicker 5s infinite; }
@@ -85,8 +85,8 @@
     <text x="30" y="35" font-size="14" fill="#00ff41" filter="url(#phosphor-strong)" letter-spacing="3">S.P.E.C.I.A.L.</text>
     <line x1="30" y1="45" x2="440" y2="45" stroke="#00ff41" stroke-width="0.5" opacity="0.2"/>
 
-    <!-- AI / ML -->
-    <text x="30" y="75" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">AI / ML</text>
+    <!-- AI -->
+    <text x="30" y="75" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">AI</text>
     <rect x="140" y="63" width="300" height="16" rx="2" fill="#0a1a0a" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
     <rect x="141" y="64" height="14" rx="1" fill="#00ff41" opacity="0.6" filter="url(#phosphor)" class="b1"/>
     <text x="455" y="75" font-size="12" fill="#00ff41" filter="url(#phosphor)">95</text>
@@ -97,11 +97,11 @@
     <rect x="141" y="99" height="14" rx="1" fill="#00ff41" opacity="0.6" filter="url(#phosphor)" class="b2"/>
     <text x="455" y="110" font-size="12" fill="#00ff41" filter="url(#phosphor)">98</text>
 
-    <!-- ARCHITECTURE -->
-    <text x="30" y="145" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">ARCH</text>
+    <!-- DEV -->
+    <text x="30" y="145" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">DEV</text>
     <rect x="140" y="133" width="300" height="16" rx="2" fill="#0a1a0a" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
     <rect x="141" y="134" height="14" rx="1" fill="#00ff41" opacity="0.6" filter="url(#phosphor)" class="b3"/>
-    <text x="455" y="145" font-size="12" fill="#00ff41" filter="url(#phosphor)">85</text>
+    <text x="455" y="145" font-size="12" fill="#00ff41" filter="url(#phosphor)">87</text>
 
     <!-- FINTECH -->
     <text x="30" y="180" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">FINTECH</text>
@@ -109,22 +109,22 @@
     <rect x="141" y="169" height="14" rx="1" fill="#00ff41" opacity="0.6" filter="url(#phosphor)" class="b4"/>
     <text x="455" y="180" font-size="12" fill="#00ff41" filter="url(#phosphor)">80</text>
 
-    <!-- HW / ASM -->
-    <text x="30" y="215" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">HW / ASM</text>
+    <!-- MECHATRONICS -->
+    <text x="30" y="215" font-size="12" fill="#00ff41" filter="url(#phosphor)" letter-spacing="1">MECHATRONICS</text>
     <rect x="140" y="203" width="300" height="16" rx="2" fill="#0a1a0a" stroke="#00ff41" stroke-width="0.5" opacity="0.3"/>
     <rect x="141" y="204" height="14" rx="1" fill="#00ff41" opacity="0.6" filter="url(#phosphor)" class="b5"/>
-    <text x="455" y="215" font-size="12" fill="#00ff41" filter="url(#phosphor)">70</text>
+    <text x="455" y="215" font-size="12" fill="#00ff41" filter="url(#phosphor)">90</text>
 
     <line x1="30" y1="232" x2="530" y2="232" stroke="#00ff41" stroke-width="0.3" opacity="0.2"/>
 
     <!-- Focus areas -->
     <text x="30"  y="253" font-size="10" fill="#00ff41" opacity="0.35" letter-spacing="1">FOCUS</text>
-    <text x="90"  y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">AI Agents</text>
-    <text x="175" y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">LLM Orchestration</text>
-    <text x="330" y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Payment Systems</text>
+    <text x="90"  y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">LLM Orchestration</text>
+    <text x="255" y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Payment Systems</text>
+    <text x="390" y="253" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">System Architecture</text>
 
     <text x="30"  y="275" font-size="10" fill="#00ff41" opacity="0.35" letter-spacing="1">TOOLS</text>
-    <text x="90"  y="275" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Claude Code</text>
+    <text x="90"  y="275" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">AI Agents</text>
     <text x="195" y="275" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">RAG Pipelines</text>
     <text x="315" y="275" font-size="10" fill="#00ff41" filter="url(#phosphor)" opacity="0.6">Distributed Systems</text>
 

@@ -448,7 +448,7 @@
 
 
 
-    <text x="466.5" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">LAST YEAR  //  REUZ</text>
+    <text x="466.5" y="218" text-anchor="middle" font-size="8" fill="#00ff41" opacity="0.12" letter-spacing="2">GIT ACTIVITY  ·  2026</text>
 
     <!-- Vignette + Scanlines -->
     <rect x="8" y="8" width="917" height="214" rx="8" fill="url(#vignette)"/>
